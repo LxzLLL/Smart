@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEb", "WEb", "{690D6EF7-2EB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Utils", "Smart.Utils\Smart.Utils.csproj", "{034E0FF9-2B29-4F8F-A565-0C44F500C172}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.DataAccess", "Smart.DataAccess\Smart.DataAccess.csproj", "{59A586A4-9B17-44E4-939D-D51A08BC7F3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +23,16 @@ Global
 		{034E0FF9-2B29-4F8F-A565-0C44F500C172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034E0FF9-2B29-4F8F-A565-0C44F500C172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034E0FF9-2B29-4F8F-A565-0C44F500C172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A586A4-9B17-44E4-939D-D51A08BC7F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A586A4-9B17-44E4-939D-D51A08BC7F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A586A4-9B17-44E4-939D-D51A08BC7F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A586A4-9B17-44E4-939D-D51A08BC7F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{034E0FF9-2B29-4F8F-A565-0C44F500C172} = {3FB1CC51-4E66-43D5-81BA-F27DAC3A20FD}
+		{59A586A4-9B17-44E4-939D-D51A08BC7F3F} = {3FB1CC51-4E66-43D5-81BA-F27DAC3A20FD}
 	EndGlobalSection
 EndGlobal
