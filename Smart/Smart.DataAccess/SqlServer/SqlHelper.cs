@@ -31,7 +31,7 @@ namespace Smart.DataAccess.SqlServer
         /// </summary>
         public void RollbackTractionand(DbTransaction dbTransaction)
         {
-            SqlOperator.endTransactionRollback( ( SqlTransaction )dbTransaction );
+            SqlOperator.EndTransactionRollback( ( SqlTransaction )dbTransaction );
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Smart.DataAccess.SqlServer
         /// </summary>
         public void CommitTractionand(DbTransaction dbTransaction)
         {
-            SqlOperator.endTransactionCommit( ( SqlTransaction )dbTransaction );
+            SqlOperator.EndTransactionCommit( ( SqlTransaction )dbTransaction );
         }
         #endregion
 

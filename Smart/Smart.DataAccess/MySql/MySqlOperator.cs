@@ -191,7 +191,7 @@
 //        /// 结束事务，确认操作
 //        /// </summary>
 //        /// <param name="Transaction">要结束的事务</param>
-//        public static void endTransactionCommit(DbTransaction Transaction)
+//        public static void EndTransactionCommit(DbTransaction Transaction)
 //        {
 //            DbConnection con = (DbConnection)Transaction.Connection;
 //            Transaction.Commit();
@@ -202,7 +202,7 @@
 //        /// 结束事务，回滚操作
 //        /// </summary>
 //        /// <param name="Transaction">要结束的事务</param>
-//        public static void endTransactionRollback(DbTransaction Transaction)
+//        public static void EndTransactionRollback(DbTransaction Transaction)
 //        {
 //            DbConnection con = (DbConnection)Transaction.Connection;
 //            Transaction.Rollback();

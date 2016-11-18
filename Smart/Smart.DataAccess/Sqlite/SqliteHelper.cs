@@ -1,17 +1,16 @@
-﻿using System.Data;
+﻿using System.Data.SQLite;
+using System.Data;
 using System.Data.Common;
-//using System.Data.OracleClient;
-using Oracle.DataAccess.Client;
 
-namespace Smart.DataAccess.Oracle
+namespace Smart.DataAccess.Sqlite
 {
-    public class OracleHelper : IDbHelper
+    public class SqliteHelper : IDbHelper
     {
-        private readonly OracleConnection _connection;
+        private readonly SQLiteConnection _connection;
 
-        public OracleHelper( IDbConnection connection )
+        public SqliteHelper( IDbConnection connection )
         {
-            _connection = (OracleConnection)connection;
+            this._connection = ( SQLiteConnection )connection;
         }
 
         #region 事务
@@ -20,7 +19,7 @@ namespace Smart.DataAccess.Oracle
         /// </summary>
         public DbTransaction BeginTractionand()
         {
-            DbTransaction transaction = OracleOperator.BeginTransaction(this._connection);
+            DbTransaction transaction = SqliteOperator.BeginTransaction(this._connection);
             return transaction;
         }
 
@@ -29,7 +28,7 @@ namespace Smart.DataAccess.Oracle
         /// </summary>
         public void RollbackTractionand( DbTransaction dbTransaction )
         {
-            OracleOperator.EndTransactionRollback( (OracleTransaction)dbTransaction );
+            SqliteOperator.EndTransactionCommit( ( SQLiteTransaction )dbTransaction );
         }
 
         /// <summary>
@@ -37,7 +36,7 @@ namespace Smart.DataAccess.Oracle
         /// </summary>
         public void CommitTractionand( DbTransaction dbTransaction )
         {
-            OracleOperator.EndTransactionCommit( ( OracleTransaction )dbTransaction );
+            SqliteOperator.EndTransactionCommit( ( SQLiteTransaction )dbTransaction );
         }
         #endregion
 
@@ -48,7 +47,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="commandText">sql语句</param>
         public DataSet ExecuteDataSet( string commandText, CommandType commandType )
         {
-            DataSet ds = OracleOperator.ExecuteDataset(this._connection, commandType, commandText);
+            DataSet ds = SqliteOperator.ExecuteDataset(this._connection, commandType, commandText);
             return ds;
         }
 
@@ -59,9 +58,11 @@ namespace Smart.DataAccess.Oracle
         /// <param name="parameterValues">参数</param>
         public DataSet ExecuteDataSet( string commandText, CommandType commandType, params DbParameter[ ] parameterValues )
         {
-            DataSet ds = OracleOperator.ExecuteDataset(this._connection, commandType, commandText, (OracleParameter[])parameterValues);
+            DataSet ds = SqliteOperator.ExecuteDataset(this._connection, commandType, commandText, (SQLiteParameter[])parameterValues);
             return ds;
         }
+
+
         #endregion
 
         #region ExecuteNonQuery
@@ -71,7 +72,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="commandText">sql语句</param>
         public int ExecuteNonQuery( string commandText, CommandType commandType )
         {
-            int result = OracleOperator.ExecuteNonQuery(this._connection, commandType, commandText);
+            int result = SqliteOperator.ExecuteNonQuery(this._connection, commandType, commandText);
             return result;
         }
 
@@ -82,7 +83,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="commandText">sql语句</param>
         public int ExecuteNonQuery( DbTransaction trans, string commandText, CommandType commandType )
         {
-            int result = OracleOperator.ExecuteNonQuery((OracleTransaction)trans, commandType, commandText);
+            int result = SqliteOperator.ExecuteNonQuery((SQLiteTransaction)trans, commandType, commandText);
             return result;
         }
 
@@ -93,7 +94,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="parameterValues">参数</param>
         public int ExecuteNonQuery( string commandText, CommandType commandType, params DbParameter[ ] parameterValues )
         {
-            int result = OracleOperator.ExecuteNonQuery(this._connection, commandType, commandText, (OracleParameter[])parameterValues);
+            int result = SqliteOperator.ExecuteNonQuery(this._connection, commandType, commandText, (SQLiteParameter[])parameterValues);
             return result;
         }
 
@@ -105,7 +106,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="parameterValues">参数</param>
         public int ExecuteNonQuery( DbTransaction trans, string commandText, CommandType commandType, params DbParameter[ ] parameterValues )
         {
-            int result = OracleOperator.ExecuteNonQuery((OracleTransaction)trans, commandType, commandText, (OracleParameter[])parameterValues);
+            int result = SqliteOperator.ExecuteNonQuery((SQLiteTransaction)trans, commandType, commandText, (SQLiteParameter[])parameterValues);
             return result;
         }
         #endregion
@@ -117,7 +118,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="commandText">sql语句</param>
         public IDataReader ExecuteReader( string commandText, CommandType commandType )
         {
-            IDataReader dr = OracleOperator.ExecuteReader(this._connection, commandType, commandText);
+            IDataReader dr = SqliteOperator.ExecuteReader(this._connection, commandType, commandText);
             return dr;
         }
 
@@ -128,9 +129,11 @@ namespace Smart.DataAccess.Oracle
         /// <param name="parameterValues">参数</param>
         public IDataReader ExecuteReader( string commandText, CommandType commandType, params DbParameter[ ] parameterValues )
         {
-            IDataReader dr = OracleOperator.ExecuteReader(this._connection, commandType, commandText, (OracleParameter[])parameterValues);
+            IDataReader dr = SqliteOperator.ExecuteReader(this._connection, commandType, commandText, (SQLiteParameter[])parameterValues);
             return dr;
         }
+
+
         #endregion
 
         #region ExecuteScalar
@@ -140,9 +143,10 @@ namespace Smart.DataAccess.Oracle
         /// <param name="commandText">sql语句</param>
         public object ExecuteScalar( string commandText, CommandType commandType )
         {
-            object result = OracleOperator.ExecuteScalar(this._connection, commandType, commandText);
+            object result = SqliteOperator.ExecuteScalar(this._connection, commandType, commandText);
             return result;
         }
+
 
         /// <summary>
         /// 执行sql语句,ExecuteScalar 返回第一行第一列的值
@@ -151,7 +155,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="parameterValues">参数</param>
         public object ExecuteScalar( string commandText, CommandType commandType, params DbParameter[ ] parameterValues )
         {
-            object result = OracleOperator.ExecuteScalar(this._connection, commandType, commandText, (OracleParameter[])parameterValues);
+            object result = SqliteOperator.ExecuteScalar(this._connection, commandType, commandText, (SQLiteParameter[])parameterValues);
             return result;
         }
 
@@ -162,7 +166,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="commandText">sql语句</param>
         public object ExecuteScalar( DbTransaction trans, string commandText, CommandType commandType )
         {
-            object result = OracleOperator.ExecuteScalar(trans, commandType, commandText);
+            object result = SqliteOperator.ExecuteScalar((SQLiteTransaction)trans, commandType, commandText);
             return result;
         }
 
@@ -174,7 +178,7 @@ namespace Smart.DataAccess.Oracle
         /// <param name="parameterValues">参数</param>
         public object ExecuteScalar( DbTransaction trans, string commandText, CommandType commandType, params DbParameter[ ] parameterValues )
         {
-            object result = OracleOperator.ExecuteScalar((OracleTransaction)trans, commandType, commandText, (OracleParameter[])parameterValues);
+            object result = SqliteOperator.ExecuteScalar((SQLiteTransaction)trans, commandType, commandText, (SQLiteParameter[])parameterValues);
             return result;
         }
 
@@ -189,12 +193,11 @@ namespace Smart.DataAccess.Oracle
         /// <param name="sqlCount">查询总数的语句</param>
         /// <param name="orderBy">排序</param>
         /// <returns></returns>
-        public string GetPagingSql( int pageIndex, int pageSize, string selectSql,string orderBy )
+        public string GetPagingSql( int pageIndex, int pageSize, string selectSql, string orderBy )
         {
-            return PageHelper.GetOraclePagingSql( pageIndex, pageSize, selectSql,orderBy );
+            return PageHelper.GetPagingSql( pageIndex, pageSize, selectSql, orderBy );
         }
 
 
     }
-
 }

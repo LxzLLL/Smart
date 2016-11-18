@@ -68,7 +68,7 @@
 //        /// </summary>
 //        public void RollbackTractionand(DbTransaction dbTransaction)
 //        {
-//            MySqlHelper.endTransactionRollback(dbTransaction);
+//            MySqlHelper.EndTransactionRollback(dbTransaction);
 //        }
 
 //        /// <summary>
@@ -76,7 +76,7 @@
 //        /// </summary>
 //        public void CommitTractionand(DbTransaction dbTransaction)
 //        {
-//            MySqlHelper.endTransactionCommit(dbTransaction);
+//            MySqlHelper.EndTransactionCommit(dbTransaction);
 //        }
 //        #endregion
 
