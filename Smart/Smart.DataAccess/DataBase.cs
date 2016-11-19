@@ -27,10 +27,19 @@ namespace Smart.DataAccess
     public class DataBase : IDataBase
     {
         #region 只读属性
+        /// <summary>
+        ///  数据库链接对象
+        /// </summary>
         public IDbConnection Connection { get; }
 
+        /// <summary>
+        ///  数据库链接字符串
+        /// </summary>
         public string ConnKey { get; }
 
+        /// <summary>
+        ///  数据库类型
+        /// </summary>
         public DataBaseType DatabaseType { get; }
         #endregion
 

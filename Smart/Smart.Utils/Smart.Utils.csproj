@@ -108,6 +108,13 @@
     <Compile Include="Encryption\RSACryption.cs" />
     <Compile Include="Encryption\ShaHelper.cs" />
     <Compile Include="Enum\EnumHelper.cs" />
+    <Compile Include="Exceptions\ConfigException.cs" />
+    <Compile Include="Exceptions\DataAccessException.cs" />
+    <Compile Include="Exceptions\ExceptionHelper.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="File\DirFileHelper.cs" />
     <Compile Include="File\FileOperateHelper.cs" />
     <Compile Include="File\ImageFileHelper.cs" />
@@ -144,6 +151,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Random\RandomHelper.cs" />
     <Compile Include="Random\RandomOperate.cs" />
+    <Compile Include="Reflection\Assemblies.cs" />
+    <Compile Include="Reflection\AssemblyScope.cs" />
     <Compile Include="Security\AdminAuthenticationAttribute.cs" />
     <Compile Include="Security\AuthorizedUser.cs" />
     <Compile Include="Security\CryptographUtility.cs" />
