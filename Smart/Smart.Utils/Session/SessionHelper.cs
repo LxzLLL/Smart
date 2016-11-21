@@ -1,7 +1,7 @@
 ﻿
 using System.Web;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// Session 操作类

@@ -2,7 +2,7 @@ using System;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
 	/// <summary>
 	/// 加密解密实用类。

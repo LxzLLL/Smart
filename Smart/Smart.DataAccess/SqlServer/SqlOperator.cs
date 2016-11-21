@@ -14,7 +14,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.Common;
 
-namespace Smart.DataAccess.SqlServer
+namespace Smart.Core.DataAccess.SqlServer
 {
     /// <summary>
     /// 封装数据库的基本操作

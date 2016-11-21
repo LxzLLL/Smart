@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 文件类型

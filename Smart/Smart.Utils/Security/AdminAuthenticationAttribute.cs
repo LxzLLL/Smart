@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 管理员级别用户的操作权限验证

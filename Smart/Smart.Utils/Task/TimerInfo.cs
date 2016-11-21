@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
 	/// <summary>
 	/// A wrapper class for System.Threading.Timer

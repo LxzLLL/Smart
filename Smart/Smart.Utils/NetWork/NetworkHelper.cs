@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Net.Sockets;
 using System.Text;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 网络工具

@@ -2,7 +2,7 @@
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     public class JsonHelper
     {

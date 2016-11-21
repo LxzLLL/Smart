@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 提供一组对 类型 <see cref="System.Type"/> 操作方法的扩展。

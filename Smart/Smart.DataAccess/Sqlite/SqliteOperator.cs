@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Data.Common;
 
-namespace Smart.DataAccess.Sqlite
+namespace Smart.Core.DataAccess.Sqlite
 {
     /// <summary>
     /// 封装数据库的基本操作

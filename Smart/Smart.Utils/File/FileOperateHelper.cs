@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.IO;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     public class FileOperateHelper
     {

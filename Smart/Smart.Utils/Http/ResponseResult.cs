@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ServiceStack.Text;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 响应结果类

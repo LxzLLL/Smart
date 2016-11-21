@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 汉字转拼音类

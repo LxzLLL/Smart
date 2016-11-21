@@ -4,10 +4,10 @@
  * 
  * **************************************************************/
 
-using Smart.DataAccess.Oracle;
-using Smart.DataAccess.SqlServer;
+using Smart.Core.DataAccess.Oracle;
+using Smart.Core.DataAccess.SqlServer;
 
-namespace Smart.DataAccess
+namespace Smart.Core.DataAccess
 {
     public class DbHelperFactory
     {

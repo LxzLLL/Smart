@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 扩展HttpRequestMessage方法

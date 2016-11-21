@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Smart.DataAccess
+namespace Smart.Core.DataAccess
 {
     /// <summary>
     /// 功能描述：分页帮助类

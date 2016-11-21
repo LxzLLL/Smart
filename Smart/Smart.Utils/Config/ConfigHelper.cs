@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
 	/// <summary>
 	/// web.config²Ù×÷Àà

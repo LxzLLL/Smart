@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 权限验证属性类

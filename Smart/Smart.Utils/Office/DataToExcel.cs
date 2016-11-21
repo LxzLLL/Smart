@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 //using Excel;
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 操作EXCEL导出数据报表的类

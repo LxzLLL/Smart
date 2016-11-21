@@ -5,7 +5,7 @@ using System.Text;
 using System.Web;
 using System.Text.RegularExpressions;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 防止跨站脚本攻击的代码

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 表示应用程序集的作用范围。

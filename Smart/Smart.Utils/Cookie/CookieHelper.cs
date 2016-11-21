@@ -3,7 +3,7 @@ using System.Web;
 
 using Newtonsoft.Json;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     public class CookieHelper
     {

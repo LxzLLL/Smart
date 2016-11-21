@@ -17,7 +17,7 @@
 
 //using System.Data.Common;
 
-//namespace Smart.DataAccess.MySql
+//namespace Smart.Core.DataAccess.MySql
 //{
 //    /// <summary>
 //    /// 封装数据库的基本操作

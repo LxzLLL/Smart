@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// INIÎÄ¼þ¶ÁÐ´Àà¡£

@@ -1,5 +1,5 @@
 ﻿
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 共用工具类

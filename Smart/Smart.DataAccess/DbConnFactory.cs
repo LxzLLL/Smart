@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data;
 using Oracle.DataAccess.Client;
 
-namespace Smart.DataAccess
+namespace Smart.Core.DataAccess
 {
     /// <summary>
     ///  数据库链接工厂

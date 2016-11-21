@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Text.RegularExpressions;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 条形码转HTML类

@@ -2,7 +2,7 @@
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// PDF文档操作类

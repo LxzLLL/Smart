@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Text.RegularExpressions;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// IIS 操作方法集合

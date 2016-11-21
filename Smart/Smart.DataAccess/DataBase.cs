@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Smart.DataAccess
+namespace Smart.Core.DataAccess
 {
 
     /// <summary>

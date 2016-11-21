@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 配置信息异常类，用于封装由错误的配置信息引发的异常，以供 业务应用层 抓取

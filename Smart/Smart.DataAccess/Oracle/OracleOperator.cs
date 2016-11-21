@@ -5,7 +5,7 @@ using Oracle.DataAccess.Client;
 using System.Data.Common;
 
 
-namespace Smart.DataAccess.Oracle
+namespace Smart.Core.DataAccess.Oracle
 {
     /// <summary>
     /// 封装数据库的基本操作

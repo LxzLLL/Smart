@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Smart.Utils.FullSearch
+namespace Smart.Core.Utils.FullSearch
 {
     /// <summary>
     /// 作者：Arvin

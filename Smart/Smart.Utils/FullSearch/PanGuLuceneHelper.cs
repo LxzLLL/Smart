@@ -15,7 +15,7 @@ using Lucene.Net.Search;
 /// 描述：基于Lucene.net的全文检索
 /// 使用范围：目前暂未考虑对索引进行分组（例如一个表一个索引分组）
 /// </summary>
-namespace Smart.Utils.FullSearch
+namespace Smart.Core.Utils.FullSearch
 {
     /// <summary>
     /// 盘古分词在lucene.net中的使用帮助类

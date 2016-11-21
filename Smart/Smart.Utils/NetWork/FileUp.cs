@@ -3,7 +3,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 文件上传类

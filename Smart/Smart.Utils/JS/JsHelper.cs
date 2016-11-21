@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 客户端脚本输出

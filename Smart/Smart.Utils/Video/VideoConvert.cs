@@ -1,7 +1,7 @@
 using System.Web;
 using System.Configuration;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
 
     public class VideoConvert : System.Web.UI.Page

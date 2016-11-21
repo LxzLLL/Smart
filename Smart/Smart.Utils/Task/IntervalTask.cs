@@ -6,7 +6,7 @@ using System.Web;
 using System.Threading;
 
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
 	/// <summary>
 	/// For ASP.Net applications.

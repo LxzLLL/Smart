@@ -1,7 +1,7 @@
 ﻿using System;
 using RestSharp;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// REST Client的帮助类

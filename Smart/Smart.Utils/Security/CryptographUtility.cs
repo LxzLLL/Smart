@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     public class CryptographUtility
     {

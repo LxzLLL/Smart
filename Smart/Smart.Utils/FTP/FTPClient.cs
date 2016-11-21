@@ -5,7 +5,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// FTP 操作类客户端

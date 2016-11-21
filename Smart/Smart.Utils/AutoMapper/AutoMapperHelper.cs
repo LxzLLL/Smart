@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using AutoMapper;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// AutoMapper帮助类

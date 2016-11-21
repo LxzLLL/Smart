@@ -14,7 +14,7 @@
 //using System.Linq;
 //using System.Text;
 
-//namespace Smart.DataAccess.MySql
+//namespace Smart.Core.DataAccess.MySql
 //{
 //    public class MySqlHelper : IDbHelper
 //    {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 作者：Arvin

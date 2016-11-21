@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Smart.DataAccess
+namespace Smart.Core.DataAccess
 {
     /// <summary>
     ///  数据库接口

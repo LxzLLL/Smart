@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Web;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 文件下载类

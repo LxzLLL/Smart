@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Data;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// Xml的操作公共类

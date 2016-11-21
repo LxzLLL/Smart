@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Web;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 作者：Arvin

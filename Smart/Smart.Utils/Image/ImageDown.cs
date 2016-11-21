@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 图片下载

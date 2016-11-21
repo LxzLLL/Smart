@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 经过授权的用户对象

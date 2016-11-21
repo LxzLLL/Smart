@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// UpLoadFiles 的摘要说明

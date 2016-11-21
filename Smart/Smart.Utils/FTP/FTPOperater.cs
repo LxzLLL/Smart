@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.IO;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// FTP²Ù×÷Àà

@@ -3,7 +3,7 @@ using System.Data.Common;
 //using System.Data.OracleClient;
 using Oracle.DataAccess.Client;
 
-namespace Smart.DataAccess.Oracle
+namespace Smart.Core.DataAccess.Oracle
 {
     public class OracleHelper : IDbHelper
     {

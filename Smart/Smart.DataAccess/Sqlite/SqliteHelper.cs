@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.Common;
 
-namespace Smart.DataAccess.Sqlite
+namespace Smart.Core.DataAccess.Sqlite
 {
     public class SqliteHelper : IDbHelper
     {

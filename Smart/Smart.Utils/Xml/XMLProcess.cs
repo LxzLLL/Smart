@@ -3,7 +3,7 @@ using System.Data;
 using System.IO;
 using System.Xml;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     public class XmlProcess
     {

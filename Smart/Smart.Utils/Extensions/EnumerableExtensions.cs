@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 提供一组对 公开泛型枚举数类型 <see cref="System.Collections.Generic.IEnumerable&lt;TSource&gt;"/> 操作方法的扩展。

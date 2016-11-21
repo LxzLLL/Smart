@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using Dapper;
-using Smart.DataAccess;
-using Smart.IDAL;
-using Smart.Utils;
+using Smart.Core.DataAccess;
+using Smart.Framework.IDAL;
+using Smart.Core.Utils;
 
-namespace Smart.Orm
+namespace Smart.Core.Orm
 {
 
     /// <summary>

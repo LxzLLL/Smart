@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Xml;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 作者：Arvin

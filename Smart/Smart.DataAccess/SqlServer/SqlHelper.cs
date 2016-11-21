@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Smart.DataAccess.SqlServer
+namespace Smart.Core.DataAccess.SqlServer
 {
     /// <summary>
     /// 数据库访问适配器

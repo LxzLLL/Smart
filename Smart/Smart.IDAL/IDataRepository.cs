@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using Smart.DataAccess;
+using Smart.Core.DataAccess;
 
-namespace Smart.IDAL
+namespace Smart.Framework.IDAL
 {
     /// <summary>
     /// 提供数据层使用，支持传入sql

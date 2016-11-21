@@ -11,7 +11,7 @@ using System.Globalization;
 
 
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     ///  ftp链接协议枚举

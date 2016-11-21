@@ -4,7 +4,7 @@ using System.Web.UI;
 using System.IO;
 using System.Web.UI.WebControls;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     public class ExportExcel
     {

@@ -3,7 +3,7 @@ using System.Linq;
 using S.Utilities;
 
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 提供一组对字符串对象 <see cref="System.String"/> 操作方法的扩展。

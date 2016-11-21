@@ -10,7 +10,7 @@
 using System.Data.Common;
 using System.Data;
 
-namespace Smart.DataAccess
+namespace Smart.Core.DataAccess
 {
     /// <summary>
     /// 提供对数据库的基本操作，连接字符串需要在数据库配置。

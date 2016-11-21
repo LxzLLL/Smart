@@ -1,7 +1,7 @@
 using System; 
 using System.Text; 
 using System.Security.Cryptography;
-namespace Smart.Utils
+namespace Smart.Core.Utils
 { 
 	/// <summary> 
 	/// RSA加密解密及RSA签名和验证

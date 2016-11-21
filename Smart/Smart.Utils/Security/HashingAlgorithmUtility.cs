@@ -2,7 +2,7 @@
 using System.Text;
 using System.Security.Cryptography;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// Hash算法Provider

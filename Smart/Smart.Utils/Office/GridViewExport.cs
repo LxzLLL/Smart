@@ -5,7 +5,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Text;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// Summary description for GridViewExport

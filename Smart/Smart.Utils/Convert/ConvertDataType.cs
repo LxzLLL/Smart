@@ -2,7 +2,7 @@
 using System.Text;
 using System.IO;
 
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
     /// <summary>
     /// 作者：Arvin

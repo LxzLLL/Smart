@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography;  
 using System.Text;
-namespace Smart.Utils
+namespace Smart.Core.Utils
 {
 	/// <summary>
 	/// DESº”√‹/Ω‚√‹¿‡°£
