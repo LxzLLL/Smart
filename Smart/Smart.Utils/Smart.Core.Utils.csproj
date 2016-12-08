@@ -109,6 +109,7 @@
     <Compile Include="Convert\StringHelper.cs" />
     <Compile Include="Cookie\CookieHelper.cs" />
     <Compile Include="DllLoad\CppDll.cs" />
+    <Compile Include="Encoding\EncodingHelper.cs" />
     <Compile Include="Encryption\DEncrypt.cs" />
     <Compile Include="Encryption\DESEncrypt.cs" />
     <Compile Include="Encryption\Encrypt.cs" />
