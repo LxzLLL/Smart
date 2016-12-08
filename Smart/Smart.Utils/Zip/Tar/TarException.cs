@@ -1,4 +1,4 @@
-// TarException.cs
+﻿// TarException.cs
 //
 // Copyright 2004 John Reilly
 //

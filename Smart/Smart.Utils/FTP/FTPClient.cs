@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Net;
 using System.IO;
 using System.Text;
@@ -8,15 +8,15 @@ using System.Threading;
 namespace Smart.Core.Utils
 {
     /// <summary>
-    /// FTP ²Ù×÷Àà¿Í»§¶Ë
+    /// FTP æ“ä½œç±»å®¢æˆ·ç«¯
     /// </summary>
     public class FTPClient
     {
         public static object obj = new object();
 
-        #region ¹¹Ôìº¯Êı
+        #region æ„é€ å‡½æ•°
         /// <summary>
-        /// È±Ê¡¹¹Ôìº¯Êı
+        /// ç¼ºçœæ„é€ å‡½æ•°
         /// </summary>
         public FTPClient()
         {
@@ -29,7 +29,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ¹¹Ôìº¯Êı
+        /// æ„é€ å‡½æ•°
         /// </summary>
         public FTPClient(string remoteHost, string remotePath, string remoteUser, string remotePass, int remotePort)
         {
@@ -42,7 +42,7 @@ namespace Smart.Core.Utils
         }
         #endregion
 
-        #region ×Ö¶Î
+        #region å­—æ®µ
         private int strRemotePort;
         private Boolean bConnected;
         private string strRemoteHost;
@@ -51,42 +51,42 @@ namespace Smart.Core.Utils
         private string strRemotePath;
 
         /// <summary>
-        /// ·şÎñÆ÷·µ»ØµÄÓ¦´ğĞÅÏ¢(°üº¬Ó¦´ğÂë)
+        /// æœåŠ¡å™¨è¿”å›çš„åº”ç­”ä¿¡æ¯(åŒ…å«åº”ç­”ç )
         /// </summary>
         private string strMsg;
         /// <summary>
-        /// ·şÎñÆ÷·µ»ØµÄÓ¦´ğĞÅÏ¢(°üº¬Ó¦´ğÂë)
+        /// æœåŠ¡å™¨è¿”å›çš„åº”ç­”ä¿¡æ¯(åŒ…å«åº”ç­”ç )
         /// </summary>
         private string strReply;
         /// <summary>
-        /// ·şÎñÆ÷·µ»ØµÄÓ¦´ğÂë
+        /// æœåŠ¡å™¨è¿”å›çš„åº”ç­”ç 
         /// </summary>
         private int iReplyCode;
         /// <summary>
-        /// ½øĞĞ¿ØÖÆÁ¬½ÓµÄsocket
+        /// è¿›è¡Œæ§åˆ¶è¿æ¥çš„socket
         /// </summary>
         private Socket socketControl;
         /// <summary>
-        /// ´«ÊäÄ£Ê½
+        /// ä¼ è¾“æ¨¡å¼
         /// </summary>
         private TransferType trType;
         /// <summary>
-        /// ½ÓÊÕºÍ·¢ËÍÊı¾İµÄ»º³åÇø
+        /// æ¥æ”¶å’Œå‘é€æ•°æ®çš„ç¼“å†²åŒº
         /// </summary>
         private static int BLOCK_SIZE = 512;
         /// <summary>
-        /// ±àÂë·½Ê½
+        /// ç¼–ç æ–¹å¼
         /// </summary>
         Encoding ASCII = Encoding.ASCII;
         /// <summary>
-        /// ×Ö½ÚÊı×é
+        /// å­—èŠ‚æ•°ç»„
         /// </summary>
         Byte[] buffer = new Byte[BLOCK_SIZE];
         #endregion
 
-        #region ÊôĞÔ
+        #region å±æ€§
         /// <summary>
-        /// FTP·şÎñÆ÷IPµØÖ·
+        /// FTPæœåŠ¡å™¨IPåœ°å€
         /// </summary>
         public string RemoteHost
         {
@@ -101,7 +101,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// FTP·şÎñÆ÷¶Ë¿Ú
+        /// FTPæœåŠ¡å™¨ç«¯å£
         /// </summary>
         public int RemotePort
         {
@@ -116,7 +116,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// µ±Ç°·şÎñÆ÷Ä¿Â¼
+        /// å½“å‰æœåŠ¡å™¨ç›®å½•
         /// </summary>
         public string RemotePath
         {
@@ -131,7 +131,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// µÇÂ¼ÓÃ»§ÕËºÅ
+        /// ç™»å½•ç”¨æˆ·è´¦å·
         /// </summary>
         public string RemoteUser
         {
@@ -142,7 +142,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÓÃ»§µÇÂ¼ÃÜÂë
+        /// ç”¨æˆ·ç™»å½•å¯†ç 
         /// </summary>
         public string RemotePass
         {
@@ -153,7 +153,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÊÇ·ñµÇÂ¼
+        /// æ˜¯å¦ç™»å½•
         /// </summary>
         public bool Connected
         {
@@ -164,9 +164,9 @@ namespace Smart.Core.Utils
         }
         #endregion
 
-        #region Á´½Ó
+        #region é“¾æ¥
         /// <summary>
-        /// ½¨Á¢Á¬½Ó 
+        /// å»ºç«‹è¿æ¥ 
         /// </summary>
         public void Connect()
         {
@@ -180,7 +180,7 @@ namespace Smart.Core.Utils
                 }
                 catch (Exception)
                 {
-                    throw new IOException("²»ÄÜÁ¬½Óftp·şÎñÆ÷");
+                    throw new IOException("ä¸èƒ½è¿æ¥ftpæœåŠ¡å™¨");
                 }
             }
             ReadReply();
@@ -209,7 +209,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ¹Ø±ÕÁ¬½Ó
+        /// å…³é—­è¿æ¥
         /// </summary>
         public void DisConnect()
         {
@@ -221,25 +221,25 @@ namespace Smart.Core.Utils
         }
         #endregion
 
-        #region ´«ÊäÄ£Ê½
+        #region ä¼ è¾“æ¨¡å¼
         /// <summary>
-        /// ´«ÊäÄ£Ê½:¶ş½øÖÆÀàĞÍ¡¢ASCIIÀàĞÍ
+        /// ä¼ è¾“æ¨¡å¼:äºŒè¿›åˆ¶ç±»å‹ã€ASCIIç±»å‹
         /// </summary>
         public enum TransferType { Binary, ASCII };
 
         /// <summary>
-        /// ÉèÖÃ´«ÊäÄ£Ê½
+        /// è®¾ç½®ä¼ è¾“æ¨¡å¼
         /// </summary>
-        /// <param name="ttType">´«ÊäÄ£Ê½</param>
+        /// <param name="ttType">ä¼ è¾“æ¨¡å¼</param>
         public void SetTransferType(TransferType ttType)
         {
             if (ttType == TransferType.Binary)
             {
-                SendCommand("TYPE I");//binaryÀàĞÍ´«Êä
+                SendCommand("TYPE I");//binaryç±»å‹ä¼ è¾“
             }
             else
             {
-                SendCommand("TYPE A");//ASCIIÀàĞÍ´«Êä
+                SendCommand("TYPE A");//ASCIIç±»å‹ä¼ è¾“
             }
             if (iReplyCode != 200)
             {
@@ -252,20 +252,20 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// »ñµÃ´«ÊäÄ£Ê½
+        /// è·å¾—ä¼ è¾“æ¨¡å¼
         /// </summary>
-        /// <returns>´«ÊäÄ£Ê½</returns>
+        /// <returns>ä¼ è¾“æ¨¡å¼</returns>
         public TransferType GetTransferType()
         {
             return trType;
         }
         #endregion
 
-        #region ÎÄ¼ş²Ù×÷
+        #region æ–‡ä»¶æ“ä½œ
         /// <summary>
-        /// »ñµÃÎÄ¼şÁĞ±í
+        /// è·å¾—æ–‡ä»¶åˆ—è¡¨
         /// </summary>
-        /// <param name="strMask">ÎÄ¼şÃûµÄÆ¥Åä×Ö·û´®</param>
+        /// <param name="strMask">æ–‡ä»¶åçš„åŒ¹é…å­—ç¬¦ä¸²</param>
         public string[] Dir(string strMask)
         {
             if (!bConnected)
@@ -291,7 +291,7 @@ namespace Smart.Core.Utils
             }
             char[] seperator = { '\n' };
             string[] strsFileList = strMsg.Split(seperator);
-            socketData.Close(); //Êı¾İsocket¹Ø±ÕÊ±Ò²»áÓĞ·µ»ØÂë
+            socketData.Close(); //æ•°æ®socketå…³é—­æ—¶ä¹Ÿä¼šæœ‰è¿”å›ç 
             if (iReplyCode != 226)
             {
                 ReadReply();
@@ -342,10 +342,10 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// »ñÈ¡ÎÄ¼ş´óĞ¡
+        /// è·å–æ–‡ä»¶å¤§å°
         /// </summary>
-        /// <param name="strFileName">ÎÄ¼şÃû</param>
-        /// <returns>ÎÄ¼ş´óĞ¡</returns>
+        /// <param name="strFileName">æ–‡ä»¶å</param>
+        /// <returns>æ–‡ä»¶å¤§å°</returns>
         public long GetFileSize(string strFileName)
         {
             if (!bConnected)
@@ -367,10 +367,10 @@ namespace Smart.Core.Utils
 
 
         /// <summary>
-        /// »ñÈ¡ÎÄ¼şĞÅÏ¢
+        /// è·å–æ–‡ä»¶ä¿¡æ¯
         /// </summary>
-        /// <param name="strFileName">ÎÄ¼şÃû</param>
-        /// <returns>ÎÄ¼ş´óĞ¡</returns>
+        /// <param name="strFileName">æ–‡ä»¶å</param>
+        /// <returns>æ–‡ä»¶å¤§å°</returns>
         public string GetFileInfo(string strFileName)
         {
             if (!bConnected)
@@ -405,9 +405,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// É¾³ı
+        /// åˆ é™¤
         /// </summary>
-        /// <param name="strFileName">´ıÉ¾³ıÎÄ¼şÃû</param>
+        /// <param name="strFileName">å¾…åˆ é™¤æ–‡ä»¶å</param>
         public void Delete(string strFileName)
         {
             if (!bConnected)
@@ -422,10 +422,10 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÖØÃüÃû(Èç¹ûĞÂÎÄ¼şÃûÓëÒÑÓĞÎÄ¼şÖØÃû,½«¸²¸ÇÒÑÓĞÎÄ¼ş)
+        /// é‡å‘½å(å¦‚æœæ–°æ–‡ä»¶åä¸å·²æœ‰æ–‡ä»¶é‡å,å°†è¦†ç›–å·²æœ‰æ–‡ä»¶)
         /// </summary>
-        /// <param name="strOldFileName">¾ÉÎÄ¼şÃû</param>
-        /// <param name="strNewFileName">ĞÂÎÄ¼şÃû</param>
+        /// <param name="strOldFileName">æ—§æ–‡ä»¶å</param>
+        /// <param name="strNewFileName">æ–°æ–‡ä»¶å</param>
         public void Rename(string strOldFileName, string strNewFileName)
         {
             if (!bConnected)
@@ -437,7 +437,7 @@ namespace Smart.Core.Utils
             {
                 throw new IOException(strReply.Substring(4));
             }
-            //  Èç¹ûĞÂÎÄ¼şÃûÓëÔ­ÓĞÎÄ¼şÖØÃû,½«¸²¸ÇÔ­ÓĞÎÄ¼ş
+            //  å¦‚æœæ–°æ–‡ä»¶åä¸åŸæœ‰æ–‡ä»¶é‡å,å°†è¦†ç›–åŸæœ‰æ–‡ä»¶
             SendCommand("RNTO " + strNewFileName);
             if (iReplyCode != 250)
             {
@@ -446,12 +446,12 @@ namespace Smart.Core.Utils
         }
         #endregion
 
-        #region ÉÏ´«ºÍÏÂÔØ
+        #region ä¸Šä¼ å’Œä¸‹è½½
         /// <summary>
-        /// ÏÂÔØÒ»ÅúÎÄ¼ş
+        /// ä¸‹è½½ä¸€æ‰¹æ–‡ä»¶
         /// </summary>
-        /// <param name="strFileNameMask">ÎÄ¼şÃûµÄÆ¥Åä×Ö·û´®</param>
-        /// <param name="strFolder">±¾µØÄ¿Â¼(²»µÃÒÔ\½áÊø)</param>
+        /// <param name="strFileNameMask">æ–‡ä»¶åçš„åŒ¹é…å­—ç¬¦ä¸²</param>
+        /// <param name="strFolder">æœ¬åœ°ç›®å½•(ä¸å¾—ä»¥\ç»“æŸ)</param>
         public void Get(string strFileNameMask, string strFolder)
         {
             if (!bConnected)
@@ -461,7 +461,7 @@ namespace Smart.Core.Utils
             string[] strFiles = Dir(strFileNameMask);
             foreach (string strFile in strFiles)
             {
-                if (!strFile.Equals(""))//Ò»°ãÀ´ËµstrFilesµÄ×îºóÒ»¸öÔªËØ¿ÉÄÜÊÇ¿Õ×Ö·û´®
+                if (!strFile.Equals(""))//ä¸€èˆ¬æ¥è¯´strFilesçš„æœ€åä¸€ä¸ªå…ƒç´ å¯èƒ½æ˜¯ç©ºå­—ç¬¦ä¸²
                 {
                     Get(strFile, strFolder, strFile);
                 }
@@ -469,11 +469,11 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÏÂÔØÒ»¸öÎÄ¼ş
+        /// ä¸‹è½½ä¸€ä¸ªæ–‡ä»¶
         /// </summary>
-        /// <param name="strRemoteFileName">ÒªÏÂÔØµÄÎÄ¼şÃû</param>
-        /// <param name="strFolder">±¾µØÄ¿Â¼(²»µÃÒÔ\½áÊø)</param>
-        /// <param name="strLocalFileName">±£´æÔÚ±¾µØÊ±µÄÎÄ¼şÃû</param>
+        /// <param name="strRemoteFileName">è¦ä¸‹è½½çš„æ–‡ä»¶å</param>
+        /// <param name="strFolder">æœ¬åœ°ç›®å½•(ä¸å¾—ä»¥\ç»“æŸ)</param>
+        /// <param name="strLocalFileName">ä¿å­˜åœ¨æœ¬åœ°æ—¶çš„æ–‡ä»¶å</param>
         public void Get(string strRemoteFileName, string strFolder, string strLocalFileName)
         {
             Socket socketData = CreateDataSocket();
@@ -528,11 +528,11 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÏÂÔØÒ»¸öÎÄ¼ş
+        /// ä¸‹è½½ä¸€ä¸ªæ–‡ä»¶
         /// </summary>
-        /// <param name="strRemoteFileName">ÒªÏÂÔØµÄÎÄ¼şÃû</param>
-        /// <param name="strFolder">±¾µØÄ¿Â¼(²»µÃÒÔ\½áÊø)</param>
-        /// <param name="strLocalFileName">±£´æÔÚ±¾µØÊ±µÄÎÄ¼şÃû</param>
+        /// <param name="strRemoteFileName">è¦ä¸‹è½½çš„æ–‡ä»¶å</param>
+        /// <param name="strFolder">æœ¬åœ°ç›®å½•(ä¸å¾—ä»¥\ç»“æŸ)</param>
+        /// <param name="strLocalFileName">ä¿å­˜åœ¨æœ¬åœ°æ—¶çš„æ–‡ä»¶å</param>
         public void GetNoBinary(string strRemoteFileName, string strFolder, string strLocalFileName)
         {
             if (!bConnected)
@@ -576,10 +576,10 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÉÏ´«Ò»ÅúÎÄ¼ş
+        /// ä¸Šä¼ ä¸€æ‰¹æ–‡ä»¶
         /// </summary>
-        /// <param name="strFolder">±¾µØÄ¿Â¼(²»µÃÒÔ\½áÊø)</param>
-        /// <param name="strFileNameMask">ÎÄ¼şÃûÆ¥Åä×Ö·û(¿ÉÒÔ°üº¬*ºÍ?)</param>
+        /// <param name="strFolder">æœ¬åœ°ç›®å½•(ä¸å¾—ä»¥\ç»“æŸ)</param>
+        /// <param name="strFileNameMask">æ–‡ä»¶ååŒ¹é…å­—ç¬¦(å¯ä»¥åŒ…å«*å’Œ?)</param>
         public void Put(string strFolder, string strFileNameMask)
         {
             string[] strFiles = Directory.GetFiles(strFolder, strFileNameMask);
@@ -590,9 +590,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÉÏ´«Ò»¸öÎÄ¼ş
+        /// ä¸Šä¼ ä¸€ä¸ªæ–‡ä»¶
         /// </summary>
-        /// <param name="strFileName">±¾µØÎÄ¼şÃû</param>
+        /// <param name="strFileName">æœ¬åœ°æ–‡ä»¶å</param>
         public void Put(string strFileName)
         {
             if (!bConnected)
@@ -633,9 +633,9 @@ namespace Smart.Core.Utils
 
 
         /// <summary>
-        /// ÉÏ´«Ò»¸öÎÄ¼ş
+        /// ä¸Šä¼ ä¸€ä¸ªæ–‡ä»¶
         /// </summary>
-        /// <param name="strFileName">±¾µØÎÄ¼şÃû</param>
+        /// <param name="strFileName">æœ¬åœ°æ–‡ä»¶å</param>
         public void PutByGuid(string strFileName, string strGuid)
         {
             if (!bConnected)
@@ -676,11 +676,11 @@ namespace Smart.Core.Utils
         }
         #endregion
 
-        #region Ä¿Â¼²Ù×÷
+        #region ç›®å½•æ“ä½œ
         /// <summary>
-        /// ´´½¨Ä¿Â¼
+        /// åˆ›å»ºç›®å½•
         /// </summary>
-        /// <param name="strDirName">Ä¿Â¼Ãû</param>
+        /// <param name="strDirName">ç›®å½•å</param>
         public void MkDir(string strDirName)
         {
             if (!bConnected)
@@ -695,9 +695,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// É¾³ıÄ¿Â¼
+        /// åˆ é™¤ç›®å½•
         /// </summary>
-        /// <param name="strDirName">Ä¿Â¼Ãû</param>
+        /// <param name="strDirName">ç›®å½•å</param>
         public void RmDir(string strDirName)
         {
             if (!bConnected)
@@ -712,9 +712,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ¸Ä±äÄ¿Â¼
+        /// æ”¹å˜ç›®å½•
         /// </summary>
-        /// <param name="strDirName">ĞÂµÄ¹¤×÷Ä¿Â¼Ãû</param>
+        /// <param name="strDirName">æ–°çš„å·¥ä½œç›®å½•å</param>
         public void ChDir(string strDirName)
         {
             if (strDirName.Equals(".") || strDirName.Equals(""))
@@ -734,9 +734,9 @@ namespace Smart.Core.Utils
         }
         #endregion
 
-        #region ÄÚ²¿º¯Êı
+        #region å†…éƒ¨å‡½æ•°
         /// <summary>
-        /// ½«Ò»ĞĞÓ¦´ğ×Ö·û´®¼ÇÂ¼ÔÚstrReplyºÍstrMsg,Ó¦´ğÂë¼ÇÂ¼ÔÚiReplyCode
+        /// å°†ä¸€è¡Œåº”ç­”å­—ç¬¦ä¸²è®°å½•åœ¨strReplyå’ŒstrMsg,åº”ç­”ç è®°å½•åœ¨iReplyCode
         /// </summary>
         private void ReadReply()
         {
@@ -746,9 +746,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ½¨Á¢½øĞĞÊı¾İÁ¬½ÓµÄsocket
+        /// å»ºç«‹è¿›è¡Œæ•°æ®è¿æ¥çš„socket
         /// </summary>
-        /// <returns>Êı¾İÁ¬½Ósocket</returns>
+        /// <returns>æ•°æ®è¿æ¥socket</returns>
         private Socket CreateDataSocket()
         {
             SendCommand("PASV");
@@ -795,13 +795,13 @@ namespace Smart.Core.Utils
             }
             catch (Exception)
             {
-                throw new IOException("ÎŞ·¨Á¬½Óftp·şÎñÆ÷");
+                throw new IOException("æ— æ³•è¿æ¥ftpæœåŠ¡å™¨");
             }
             return s;
         }
 
         /// <summary>
-        /// ¹Ø±ÕsocketÁ¬½Ó(ÓÃÓÚµÇÂ¼ÒÔÇ°)
+        /// å…³é—­socketè¿æ¥(ç”¨äºç™»å½•ä»¥å‰)
         /// </summary>
         private void CloseSocketConnect()
         {
@@ -817,9 +817,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ¶ÁÈ¡Socket·µ»ØµÄËùÓĞ×Ö·û´®
+        /// è¯»å–Socketè¿”å›çš„æ‰€æœ‰å­—ç¬¦ä¸²
         /// </summary>
-        /// <returns>°üº¬Ó¦´ğÂëµÄ×Ö·û´®ĞĞ</returns>
+        /// <returns>åŒ…å«åº”ç­”ç çš„å­—ç¬¦ä¸²è¡Œ</returns>
         private string ReadLine()
         {
             lock (obj)
@@ -844,7 +844,7 @@ namespace Smart.Core.Utils
             {
                 strMsg = mess[0];
             }
-            if (!strMsg.Substring(3, 1).Equals(" ")) //·µ»Ø×Ö·û´®ÕıÈ·µÄÊÇÒÔÓ¦´ğÂë(Èç220¿ªÍ·,ºóÃæ½ÓÒ»¿Õ¸ñ,ÔÙ½ÓÎÊºò×Ö·û´®)
+            if (!strMsg.Substring(3, 1).Equals(" ")) //è¿”å›å­—ç¬¦ä¸²æ­£ç¡®çš„æ˜¯ä»¥åº”ç­”ç (å¦‚220å¼€å¤´,åé¢æ¥ä¸€ç©ºæ ¼,å†æ¥é—®å€™å­—ç¬¦ä¸²)
             {
                 return ReadLine();
             }
@@ -852,9 +852,9 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ·¢ËÍÃüÁî²¢»ñÈ¡Ó¦´ğÂëºÍ×îºóÒ»ĞĞÓ¦´ğ×Ö·û´®
+        /// å‘é€å‘½ä»¤å¹¶è·å–åº”ç­”ç å’Œæœ€åä¸€è¡Œåº”ç­”å­—ç¬¦ä¸²
         /// </summary>
-        /// <param name="strCommand">ÃüÁî</param>
+        /// <param name="strCommand">å‘½ä»¤</param>
         public void SendCommand(String strCommand)
         {
             lock (obj)

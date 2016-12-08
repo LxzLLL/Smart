@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -6,12 +6,12 @@ using System.Linq;
 namespace Smart.Core.Utils
 {
 	/// <summary>
-	/// web.config²Ù×÷Àà
+	/// web.configæ“ä½œç±»
 	/// </summary>
 	public sealed class ConfigHelper
 	{
         /// <summary>
-        /// µÃµ½AppSettingsÖĞµÄÅäÖÃ×Ö·û´®ĞÅÏ¢£¬²¢¼ÓÈë»º´æÖĞ£¨ÃûÎª"AppSettings_" + key£©
+        /// å¾—åˆ°AppSettingsä¸­çš„é…ç½®å­—ç¬¦ä¸²ä¿¡æ¯ï¼Œå¹¶åŠ å…¥ç¼“å­˜ä¸­ï¼ˆåä¸º"AppSettings_" + keyï¼‰
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -36,7 +36,7 @@ namespace Smart.Core.Utils
 		}
 
 		/// <summary>
-		/// µÃµ½AppSettingsÖĞµÄÅäÖÃBoolĞÅÏ¢
+		/// å¾—åˆ°AppSettingsä¸­çš„é…ç½®Boolä¿¡æ¯
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -59,7 +59,7 @@ namespace Smart.Core.Utils
 		}
 
 		/// <summary>
-		/// µÃµ½AppSettingsÖĞµÄÅäÖÃDecimalĞÅÏ¢
+		/// å¾—åˆ°AppSettingsä¸­çš„é…ç½®Decimalä¿¡æ¯
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -83,7 +83,7 @@ namespace Smart.Core.Utils
 		}
 
 		/// <summary>
-		/// µÃµ½AppSettingsÖĞµÄÅäÖÃintĞÅÏ¢
+		/// å¾—åˆ°AppSettingsä¸­çš„é…ç½®intä¿¡æ¯
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -108,7 +108,7 @@ namespace Smart.Core.Utils
 
 
         /// <summary>
-        /// Á¬½Ó×Ö·û´®
+        /// è¿æ¥å­—ç¬¦ä¸²
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -120,12 +120,12 @@ namespace Smart.Core.Utils
             }
             catch
             {
-                throw ExceptionHelper.ThrowConfigException( "²»´æÔÚÃûÎª¡°" + key + "¡±µÄÊı¾İ¿âÁ¬½ÓĞÅÏ¢£¬Çë¼ì²éweb.configÎÄ¼şÖĞµÄÉèÖÃ¡£" );
+                throw ExceptionHelper.ThrowConfigException( "ä¸å­˜åœ¨åä¸ºâ€œ" + key + "â€çš„æ•°æ®åº“è¿æ¥ä¿¡æ¯ï¼Œè¯·æ£€æŸ¥web.configæ–‡ä»¶ä¸­çš„è®¾ç½®ã€‚" );
             }
         }
 
         /// <summary>
-        /// Ìá¹©³ÌĞòÃû³Æ
+        /// æä¾›ç¨‹åºåç§°
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>i
@@ -137,16 +137,16 @@ namespace Smart.Core.Utils
             }
             catch
             {
-                throw ExceptionHelper.ThrowConfigException( "²»´æÔÚÃûÎª¡°" + key + "¡±µÄÊı¾İ¿âÁ¬½ÓĞÅÏ¢£¬Çë¼ì²éweb.configÎÄ¼şÖĞµÄÉèÖÃ¡£" );
+                throw ExceptionHelper.ThrowConfigException( "ä¸å­˜åœ¨åä¸ºâ€œ" + key + "â€çš„æ•°æ®åº“è¿æ¥ä¿¡æ¯ï¼Œè¯·æ£€æŸ¥web.configæ–‡ä»¶ä¸­çš„è®¾ç½®ã€‚" );
             }
         }
 
         /// <summary>
-        /// ³¢ÊÔ»ñÈ¡Ö¸¶¨Ãû³ÆµÄÊı¾İ¿âÁ¬½ÓĞÅÏ¢£¬Èô¸ÃÁ¬½ÓĞÅÏ¢´æÔÚÔò·µ»Ø true£¬²¢ÒÔÊä³ö²ÎÊıµÄ·½Ê½·µ»ØÊı¾İ¿âÁ¬½Ó×Ö·û´®ºÍÊı¾İ¿â¹ÜµÀÃû³Æ£¬Èô¸ÃÁ¬½ÓĞÅÏ¢²»´æÔÚÔò·µ»Ø false¡£
+        /// å°è¯•è·å–æŒ‡å®šåç§°çš„æ•°æ®åº“è¿æ¥ä¿¡æ¯ï¼Œè‹¥è¯¥è¿æ¥ä¿¡æ¯å­˜åœ¨åˆ™è¿”å› trueï¼Œå¹¶ä»¥è¾“å‡ºå‚æ•°çš„æ–¹å¼è¿”å›æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²å’Œæ•°æ®åº“ç®¡é“åç§°ï¼Œè‹¥è¯¥è¿æ¥ä¿¡æ¯ä¸å­˜åœ¨åˆ™è¿”å› falseã€‚
         /// </summary>
-        /// <param name="key">Ö¸¶¨µÄÊı¾İ¿âÁ¬½ÓÃû³Æ</param>
-        /// <param name="connectionString">Êä³ö²ÎÊı£¬±íÊ¾»ñÈ¡µ½µÄÊı¾İ¿âÁ¬½Ó×Ö·û´®</param>
-        /// <param name="providerName">Êä³ö²ÎÊı£¬±íÊ¾»ñÈ¡µ½µÄÊı¾İ¿â¹ÜµÀÃû³Æ</param>
+        /// <param name="key">æŒ‡å®šçš„æ•°æ®åº“è¿æ¥åç§°</param>
+        /// <param name="connectionString">è¾“å‡ºå‚æ•°ï¼Œè¡¨ç¤ºè·å–åˆ°çš„æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²</param>
+        /// <param name="providerName">è¾“å‡ºå‚æ•°ï¼Œè¡¨ç¤ºè·å–åˆ°çš„æ•°æ®åº“ç®¡é“åç§°</param>
         /// <returns></returns>
         public static bool TryGetConnectionInfo( string key, out string connectionString, out string providerName )
         {
@@ -167,7 +167,7 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ÅäÖÃÎÄ¼şÉèÖÃ
+        /// é…ç½®æ–‡ä»¶è®¾ç½®
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -176,14 +176,14 @@ namespace Smart.Core.Utils
             var set = ConfigurationManager.AppSettings[key];
 
             if ( set != null ) { return set; }
-            throw ExceptionHelper.ThrowConfigException( "²»´æÔÚÃûÎª¡°" + key + "¡±µÄAppSettingÅäÖÃĞÅÏ¢£¬Çë¼ì²éÏàÓ¦ÅäÖÃÎÄ¼şÖĞµÄÉèÖÃ¡£" );
+            throw ExceptionHelper.ThrowConfigException( "ä¸å­˜åœ¨åä¸ºâ€œ" + key + "â€çš„AppSettingé…ç½®ä¿¡æ¯ï¼Œè¯·æ£€æŸ¥ç›¸åº”é…ç½®æ–‡ä»¶ä¸­çš„è®¾ç½®ã€‚" );
         }
 
         /// <summary>
-        /// ³¢ÊÔ»ñÈ¡Ö¸¶¨Ãû³ÆµÄAppSettingÅäÖÃĞÅÏ¢£¬Èô¸ÃĞÅÏ¢´æÔÚÔò·µ»Ø true£¬²¢ÒÔÊä³ö²ÎÊıµÄ·½Ê½·µ»ØÆäÖµ£¬Èô¸ÃĞÅÏ¢²»´æÔÚÔò·µ»Ø false¡£
+        /// å°è¯•è·å–æŒ‡å®šåç§°çš„AppSettingé…ç½®ä¿¡æ¯ï¼Œè‹¥è¯¥ä¿¡æ¯å­˜åœ¨åˆ™è¿”å› trueï¼Œå¹¶ä»¥è¾“å‡ºå‚æ•°çš„æ–¹å¼è¿”å›å…¶å€¼ï¼Œè‹¥è¯¥ä¿¡æ¯ä¸å­˜åœ¨åˆ™è¿”å› falseã€‚
         /// </summary>
-        /// <param name="key">Ö¸¶¨µÄÅäÖÃÃû³Æ</param>
-        /// <param name="value">Êä³ö²ÎÊı£¬±íÊ¾»ñÈ¡µ½µÄÖµ</param>
+        /// <param name="key">æŒ‡å®šçš„é…ç½®åç§°</param>
+        /// <param name="value">è¾“å‡ºå‚æ•°ï¼Œè¡¨ç¤ºè·å–åˆ°çš„å€¼</param>
         /// <returns></returns>
         public static bool TryGetAppSettingInfo( string key, out string value )
         {
@@ -202,10 +202,10 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ½âÎöÖ¸¶¨µÄÊı¾İ¿âÁ¬½Ó×Ö·û´®£¬²¢ÒÔ¼üÖµ¶Ô·½Ê½·µ»ØÆäÖĞµÄ ÊôĞÔÃûºÍÊôĞÔÖµ
+        /// è§£ææŒ‡å®šçš„æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²ï¼Œå¹¶ä»¥é”®å€¼å¯¹æ–¹å¼è¿”å›å…¶ä¸­çš„ å±æ€§åå’Œå±æ€§å€¼
         /// </summary>
-        /// <param name="connectionString">Êı¾İ¿âÁ¬½Ó×Ö·û´®</param>
-        /// <returns>Ò»¸ö¼üÖµ¶Ô¼¯ºÏ£¬ÆäÖĞ key ÎªÊôĞÔÃû£¬ value ÎªÊôĞÔÖµ¡£</returns>
+        /// <param name="connectionString">æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²</param>
+        /// <returns>ä¸€ä¸ªé”®å€¼å¯¹é›†åˆï¼Œå…¶ä¸­ key ä¸ºå±æ€§åï¼Œ value ä¸ºå±æ€§å€¼ã€‚</returns>
         public static Dictionary<string, string> ParseConnectionString( string connectionString )
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
@@ -228,10 +228,10 @@ namespace Smart.Core.Utils
         }
 
         /// <summary>
-        /// ½âÎöÖ¸¶¨µÄÊı¾İ¿âÁ¬½Ó×Ö·û´®£¬·µ»Ø²»´ø°²È«Æ¾¾İĞÅÏ¢µÄÊı¾İ¿âÁ¬½Ó×Ö·û´®Öµ
+        /// è§£ææŒ‡å®šçš„æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²ï¼Œè¿”å›ä¸å¸¦å®‰å…¨å‡­æ®ä¿¡æ¯çš„æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²å€¼
         /// </summary>
-        /// <param name="connectionString">Êı¾İ¿âÁ¬½Ó×Ö·û´®</param>
-        /// <returns>²»´ø°²È«Æ¾¾İĞÅÏ¢µÄÊı¾İ¿âÁ¬½Ó×Ö·û´®Öµ</returns>
+        /// <param name="connectionString">æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²</param>
+        /// <returns>ä¸å¸¦å®‰å…¨å‡­æ®ä¿¡æ¯çš„æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²å€¼</returns>
         public static string GetConnectionStringWithoutCredentials( string connectionString )
         {
             IEnumerable<string> connectionKeys = ParseConnectionString(connectionString).Keys;

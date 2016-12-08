@@ -1,4 +1,4 @@
-// BZip2.cs
+﻿// BZip2.cs
 //
 // Copyright (C) 2010 David Pierson
 //

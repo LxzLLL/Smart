@@ -1,4 +1,4 @@
-// GzipInputStream.cs
+﻿// GzipInputStream.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

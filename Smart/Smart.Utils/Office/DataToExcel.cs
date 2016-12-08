@@ -1,10 +1,10 @@
-using System;
+ï»¿using System;
 using System.Diagnostics;
 //using Excel;
 namespace Smart.Core.Utils
 {
     /// <summary>
-    /// ²Ù×÷EXCELµ¼³öÊı¾İ±¨±íµÄÀà
+    /// æ“ä½œEXCELå¯¼å‡ºæ•°æ®æŠ¥è¡¨çš„ç±»
     /// </summary>
     public class DataToExcel
     {
@@ -12,11 +12,11 @@ namespace Smart.Core.Utils
         {
         }
 
-        #region ²Ù×÷EXCELµÄÒ»¸öÀà(ĞèÒªExcel.dllÖ§³Ö)
+        #region æ“ä½œEXCELçš„ä¸€ä¸ªç±»(éœ€è¦Excel.dllæ”¯æŒ)
 
         private int titleColorindex = 15;
         /// <summary>
-        /// ±êÌâ±³¾°É«
+        /// æ ‡é¢˜èƒŒæ™¯è‰²
         /// </summary>
         public int TitleColorIndex
         {
@@ -24,41 +24,41 @@ namespace Smart.Core.Utils
             get { return titleColorindex; }
         }
 
-        private DateTime beforeTime;			//ExcelÆô¶¯Ö®Ç°Ê±¼ä
-        private DateTime afterTime;				//ExcelÆô¶¯Ö®ºóÊ±¼ä
+        private DateTime beforeTime;			//Excelå¯åŠ¨ä¹‹å‰æ—¶é—´
+        private DateTime afterTime;				//Excelå¯åŠ¨ä¹‹åæ—¶é—´
 
-        #region ´´½¨Ò»¸öExcelÊ¾Àı
+        #region åˆ›å»ºä¸€ä¸ªExcelç¤ºä¾‹
         /// <summary>
-        /// ´´½¨Ò»¸öExcelÊ¾Àı
+        /// åˆ›å»ºä¸€ä¸ªExcelç¤ºä¾‹
         /// </summary>
         public void CreateExcel()
         {
             //Excel.Application excel = new Excel.Application();
             //excel.Application.Workbooks.Add(true);
-            //excel.Cells[1, 1] = "µÚ1ĞĞµÚ1ÁĞ";
-            //excel.Cells[1, 2] = "µÚ1ĞĞµÚ2ÁĞ";
-            //excel.Cells[2, 1] = "µÚ2ĞĞµÚ1ÁĞ";
-            //excel.Cells[2, 2] = "µÚ2ĞĞµÚ2ÁĞ";
-            //excel.Cells[3, 1] = "µÚ3ĞĞµÚ1ÁĞ";
-            //excel.Cells[3, 2] = "µÚ3ĞĞµÚ2ÁĞ";
+            //excel.Cells[1, 1] = "ç¬¬1è¡Œç¬¬1åˆ—";
+            //excel.Cells[1, 2] = "ç¬¬1è¡Œç¬¬2åˆ—";
+            //excel.Cells[2, 1] = "ç¬¬2è¡Œç¬¬1åˆ—";
+            //excel.Cells[2, 2] = "ç¬¬2è¡Œç¬¬2åˆ—";
+            //excel.Cells[3, 1] = "ç¬¬3è¡Œç¬¬1åˆ—";
+            //excel.Cells[3, 2] = "ç¬¬3è¡Œç¬¬2åˆ—";
 
-            ////±£´æ
+            ////ä¿å­˜
             //excel.ActiveWorkbook.SaveAs("./tt.xls", XlFileFormat.xlExcel9795, null, null, false, false, Excel.XlSaveAsAccessMode.xlNoChange, null, null, null, null, null);
-            ////´ò¿ªÏÔÊ¾
+            ////æ‰“å¼€æ˜¾ç¤º
             //excel.Visible = true;
             ////			excel.Quit();
             ////			excel=null;            
-            ////			GC.Collect();//À¬»ø»ØÊÕ
+            ////			GC.Collect();//åƒåœ¾å›æ”¶
         }
         #endregion
 
-        #region ½«DataTableµÄÊı¾İµ¼³öÏÔÊ¾Îª±¨±í
+        #region å°†DataTableçš„æ•°æ®å¯¼å‡ºæ˜¾ç¤ºä¸ºæŠ¥è¡¨
         /// <summary>
-        /// ½«DataTableµÄÊı¾İµ¼³öÏÔÊ¾Îª±¨±í
+        /// å°†DataTableçš„æ•°æ®å¯¼å‡ºæ˜¾ç¤ºä¸ºæŠ¥è¡¨
         /// </summary>
-        /// <param name="dt">Òªµ¼³öµÄÊı¾İ</param>
-        /// <param name="strTitle">µ¼³ö±¨±íµÄ±êÌâ</param>
-        /// <param name="FilePath">±£´æÎÄ¼şµÄÂ·¾¶</param>
+        /// <param name="dt">è¦å¯¼å‡ºçš„æ•°æ®</param>
+        /// <param name="strTitle">å¯¼å‡ºæŠ¥è¡¨çš„æ ‡é¢˜</param>
+        /// <param name="FilePath">ä¿å­˜æ–‡ä»¶çš„è·¯å¾„</param>
         /// <returns></returns>
         //public string OutputExcel(System.Data.DataTable dt, string strTitle, string FilePath)
         //{
@@ -75,21 +75,21 @@ namespace Smart.Core.Utils
         //    xBk = excel.Workbooks.Add(true);
         //    xSt = (Excel._Worksheet)xBk.ActiveSheet;
 
-        //    //È¡µÃÁĞ±êÌâ			
+        //    //å–å¾—åˆ—æ ‡é¢˜			
         //    foreach (DataColumn col in dt.Columns)
         //    {
         //        colIndex++;
         //        excel.Cells[4, colIndex] = col.ColumnName;
 
-        //        //ÉèÖÃ±êÌâ¸ñÊ½Îª¾ÓÖĞ¶ÔÆë
+        //        //è®¾ç½®æ ‡é¢˜æ ¼å¼ä¸ºå±…ä¸­å¯¹é½
         //        xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[4, colIndex]).Font.Bold = true;
         //        xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[4, colIndex]).HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
         //        xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[4, colIndex]).Select();
-        //        xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[4, colIndex]).Interior.ColorIndex = titleColorindex;//19;//ÉèÖÃÎªÇ³»ÆÉ«£¬¹²¼ÆÓĞ56ÖÖ
+        //        xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[4, colIndex]).Interior.ColorIndex = titleColorindex;//19;//è®¾ç½®ä¸ºæµ…é»„è‰²ï¼Œå…±è®¡æœ‰56ç§
         //    }
 
 
-        //    //È¡µÃ±í¸ñÖĞµÄÊı¾İ			
+        //    //å–å¾—è¡¨æ ¼ä¸­çš„æ•°æ®			
         //    foreach (DataRow row in dt.Rows)
         //    {
         //        rowIndex++;
@@ -100,13 +100,13 @@ namespace Smart.Core.Utils
         //            if (col.DataType == System.Type.GetType("System.DateTime"))
         //            {
         //                excel.Cells[rowIndex, colIndex] = (Convert.ToDateTime(row[col.ColumnName].ToString())).ToString("yyyy-MM-dd");
-        //                xSt.get_Range(excel.Cells[rowIndex, colIndex], excel.Cells[rowIndex, colIndex]).HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;//ÉèÖÃÈÕÆÚĞÍµÄ×Ö¶Î¸ñÊ½Îª¾ÓÖĞ¶ÔÆë
+        //                xSt.get_Range(excel.Cells[rowIndex, colIndex], excel.Cells[rowIndex, colIndex]).HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;//è®¾ç½®æ—¥æœŸå‹çš„å­—æ®µæ ¼å¼ä¸ºå±…ä¸­å¯¹é½
         //            }
         //            else
         //                if (col.DataType == System.Type.GetType("System.String"))
         //                {
         //                    excel.Cells[rowIndex, colIndex] = "'" + row[col.ColumnName].ToString();
-        //                    xSt.get_Range(excel.Cells[rowIndex, colIndex], excel.Cells[rowIndex, colIndex]).HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;//ÉèÖÃ×Ö·ûĞÍµÄ×Ö¶Î¸ñÊ½Îª¾ÓÖĞ¶ÔÆë
+        //                    xSt.get_Range(excel.Cells[rowIndex, colIndex], excel.Cells[rowIndex, colIndex]).HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;//è®¾ç½®å­—ç¬¦å‹çš„å­—æ®µæ ¼å¼ä¸ºå±…ä¸­å¯¹é½
         //                }
         //                else
         //                {
@@ -115,42 +115,42 @@ namespace Smart.Core.Utils
         //        }
         //    }
 
-        //    //¼ÓÔØÒ»¸öºÏ¼ÆĞĞ			
+        //    //åŠ è½½ä¸€ä¸ªåˆè®¡è¡Œ			
         //    int rowSum = rowIndex + 1;
         //    int colSum = 2;
-        //    excel.Cells[rowSum, 2] = "ºÏ¼Æ";
+        //    excel.Cells[rowSum, 2] = "åˆè®¡";
         //    xSt.get_Range(excel.Cells[rowSum, 2], excel.Cells[rowSum, 2]).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-        //    //ÉèÖÃÑ¡ÖĞµÄ²¿·ÖµÄÑÕÉ«			
+        //    //è®¾ç½®é€‰ä¸­çš„éƒ¨åˆ†çš„é¢œè‰²			
         //    xSt.get_Range(excel.Cells[rowSum, colSum], excel.Cells[rowSum, colIndex]).Select();
-        //    //xSt.get_Range(excel.Cells[rowSum,colSum],excel.Cells[rowSum,colIndex]).Interior.ColorIndex =Assistant.GetConfigInt("ColorIndex");// 1;//ÉèÖÃÎªÇ³»ÆÉ«£¬¹²¼ÆÓĞ56ÖÖ
+        //    //xSt.get_Range(excel.Cells[rowSum,colSum],excel.Cells[rowSum,colIndex]).Interior.ColorIndex =Assistant.GetConfigInt("ColorIndex");// 1;//è®¾ç½®ä¸ºæµ…é»„è‰²ï¼Œå…±è®¡æœ‰56ç§
 
-        //    //È¡µÃÕû¸ö±¨±íµÄ±êÌâ			
+        //    //å–å¾—æ•´ä¸ªæŠ¥è¡¨çš„æ ‡é¢˜			
         //    excel.Cells[2, 2] = strTitle;
 
-        //    //ÉèÖÃÕû¸ö±¨±íµÄ±êÌâ¸ñÊ½			
+        //    //è®¾ç½®æ•´ä¸ªæŠ¥è¡¨çš„æ ‡é¢˜æ ¼å¼			
         //    xSt.get_Range(excel.Cells[2, 2], excel.Cells[2, 2]).Font.Bold = true;
         //    xSt.get_Range(excel.Cells[2, 2], excel.Cells[2, 2]).Font.Size = 22;
 
-        //    //ÉèÖÃ±¨±í±í¸ñÎª×îÊÊÓ¦¿í¶È			
+        //    //è®¾ç½®æŠ¥è¡¨è¡¨æ ¼ä¸ºæœ€é€‚åº”å®½åº¦			
         //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[rowSum, colIndex]).Select();
         //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[rowSum, colIndex]).Columns.AutoFit();
 
-        //    //ÉèÖÃÕû¸ö±¨±íµÄ±êÌâÎª¿çÁĞ¾ÓÖĞ			
+        //    //è®¾ç½®æ•´ä¸ªæŠ¥è¡¨çš„æ ‡é¢˜ä¸ºè·¨åˆ—å±…ä¸­			
         //    xSt.get_Range(excel.Cells[2, 2], excel.Cells[2, colIndex]).Select();
         //    xSt.get_Range(excel.Cells[2, 2], excel.Cells[2, colIndex]).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenterAcrossSelection;
 
-        //    //»æÖÆ±ß¿ò			
+        //    //ç»˜åˆ¶è¾¹æ¡†			
         //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[rowSum, colIndex]).Borders.LineStyle = 1;
-        //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[rowSum, 2]).Borders[Excel.XlBordersIndex.xlEdgeLeft].Weight = Excel.XlBorderWeight.xlThick;//ÉèÖÃ×ó±ßÏß¼Ó´Ö
-        //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[4, colIndex]).Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThick;//ÉèÖÃÉÏ±ßÏß¼Ó´Ö
-        //    xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[rowSum, colIndex]).Borders[Excel.XlBordersIndex.xlEdgeRight].Weight = Excel.XlBorderWeight.xlThick;//ÉèÖÃÓÒ±ßÏß¼Ó´Ö
-        //    xSt.get_Range(excel.Cells[rowSum, 2], excel.Cells[rowSum, colIndex]).Borders[Excel.XlBordersIndex.xlEdgeBottom].Weight = Excel.XlBorderWeight.xlThick;//ÉèÖÃÏÂ±ßÏß¼Ó´Ö
+        //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[rowSum, 2]).Borders[Excel.XlBordersIndex.xlEdgeLeft].Weight = Excel.XlBorderWeight.xlThick;//è®¾ç½®å·¦è¾¹çº¿åŠ ç²—
+        //    xSt.get_Range(excel.Cells[4, 2], excel.Cells[4, colIndex]).Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThick;//è®¾ç½®ä¸Šè¾¹çº¿åŠ ç²—
+        //    xSt.get_Range(excel.Cells[4, colIndex], excel.Cells[rowSum, colIndex]).Borders[Excel.XlBordersIndex.xlEdgeRight].Weight = Excel.XlBorderWeight.xlThick;//è®¾ç½®å³è¾¹çº¿åŠ ç²—
+        //    xSt.get_Range(excel.Cells[rowSum, 2], excel.Cells[rowSum, colIndex]).Borders[Excel.XlBordersIndex.xlEdgeBottom].Weight = Excel.XlBorderWeight.xlThick;//è®¾ç½®ä¸‹è¾¹çº¿åŠ ç²—
 
 
 
         //    afterTime = DateTime.Now;
 
-        //    //ÏÔÊ¾Ğ§¹û			
+        //    //æ˜¾ç¤ºæ•ˆæœ			
         //    //excel.Visible=true;			
         //    //excel.Sheets[0] = "sss";
 
@@ -161,9 +161,9 @@ namespace Smart.Core.Utils
         //    //wkbNew.SaveAs strBookName;
         //    //excel.Save(strExcelFileName);
 
-        //    #region  ½áÊøExcel½ø³Ì
+        //    #region  ç»“æŸExcelè¿›ç¨‹
 
-        //    //ĞèÒª¶ÔExcelµÄDCOM¶ÔÏó½øĞĞÅäÖÃ:dcomcnfg
+        //    //éœ€è¦å¯¹Excelçš„DCOMå¯¹è±¡è¿›è¡Œé…ç½®:dcomcnfg
 
 
         //    //excel.Quit();
@@ -174,7 +174,7 @@ namespace Smart.Core.Utils
         //    excel.Quit();
 
 
-        //    //×¢Òâ£ºÕâÀïÓÃµ½µÄËùÓĞExcel¶ÔÏó¶¼ÒªÖ´ĞĞÕâ¸ö²Ù×÷£¬·ñÔò½áÊø²»ÁËExcel½ø³Ì
+        //    //æ³¨æ„ï¼šè¿™é‡Œç”¨åˆ°çš„æ‰€æœ‰Excelå¯¹è±¡éƒ½è¦æ‰§è¡Œè¿™ä¸ªæ“ä½œï¼Œå¦åˆ™ç»“æŸä¸äº†Excelè¿›ç¨‹
         //    //			if(rng != null)
         //    //			{
         //    //				System.Runtime.InteropServices.Marshal.ReleaseComObject(rng);
@@ -200,7 +200,7 @@ namespace Smart.Core.Utils
         //        System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
         //        excel = null;
         //    }
-        //    GC.Collect();//À¬»ø»ØÊÕ
+        //    GC.Collect();//åƒåœ¾å›æ”¶
         //    #endregion
 
         //    return filename;
@@ -208,10 +208,10 @@ namespace Smart.Core.Utils
         //}
         #endregion
 
-        #region Kill Excel½ø³Ì
+        #region Kill Excelè¿›ç¨‹
 
         /// <summary>
-        /// ½áÊøExcel½ø³Ì
+        /// ç»“æŸExcelè¿›ç¨‹
         /// </summary>
         public void KillExcelProcess()
         {
@@ -219,7 +219,7 @@ namespace Smart.Core.Utils
             DateTime startTime;
             myProcesses = Process.GetProcessesByName("Excel");
 
-            //µÃ²»µ½Excel½ø³ÌID£¬ÔİÊ±Ö»ÄÜÅĞ¶Ï½ø³ÌÆô¶¯Ê±¼ä
+            //å¾—ä¸åˆ°Excelè¿›ç¨‹IDï¼Œæš‚æ—¶åªèƒ½åˆ¤æ–­è¿›ç¨‹å¯åŠ¨æ—¶é—´
             foreach (Process myProcess in myProcesses)
             {
                 startTime = myProcess.StartTime;
@@ -233,32 +233,32 @@ namespace Smart.Core.Utils
 
         #endregion
 
-        #region ½«DataTableµÄÊı¾İµ¼³öÏÔÊ¾Îª±¨±í(²»Ê¹ÓÃExcel¶ÔÏó£¬Ê¹ÓÃCOM.Excel)
+        #region å°†DataTableçš„æ•°æ®å¯¼å‡ºæ˜¾ç¤ºä¸ºæŠ¥è¡¨(ä¸ä½¿ç”¨Excelå¯¹è±¡ï¼Œä½¿ç”¨COM.Excel)
 
-        #region Ê¹ÓÃÊ¾Àı
-        /*Ê¹ÓÃÊ¾Àı£º
+        #region ä½¿ç”¨ç¤ºä¾‹
+        /*ä½¿ç”¨ç¤ºä¾‹ï¼š
          * DataSet ds=(DataSet)Session["AdBrowseHitDayList"];
             string ExcelFolder=Assistant.GetConfigString("ExcelFolder");
             string FilePath=Server.MapPath(".")+"\\"+ExcelFolder+"\\";
 			
-            //Éú³ÉÁĞµÄÖĞÎÄ¶ÔÓ¦±í
+            //ç”Ÿæˆåˆ—çš„ä¸­æ–‡å¯¹åº”è¡¨
             Hashtable nameList = new Hashtable();
-            nameList.Add("ADID", "¹ã¸æ±àÂë");
-            nameList.Add("ADName", "¹ã¸æÃû³Æ");
-            nameList.Add("year", "Äê");
-            nameList.Add("month", "ÔÂ");
-            nameList.Add("browsum", "ÏÔÊ¾Êı");
-            nameList.Add("hitsum", "µã»÷Êı");
-            nameList.Add("BrowsinglIP", "¶ÀÁ¢IPÏÔÊ¾");
-            nameList.Add("HitsinglIP", "¶ÀÁ¢IPµã»÷");
-            //ÀûÓÃexcel¶ÔÏó
+            nameList.Add("ADID", "å¹¿å‘Šç¼–ç ");
+            nameList.Add("ADName", "å¹¿å‘Šåç§°");
+            nameList.Add("year", "å¹´");
+            nameList.Add("month", "æœˆ");
+            nameList.Add("browsum", "æ˜¾ç¤ºæ•°");
+            nameList.Add("hitsum", "ç‚¹å‡»æ•°");
+            nameList.Add("BrowsinglIP", "ç‹¬ç«‹IPæ˜¾ç¤º");
+            nameList.Add("HitsinglIP", "ç‹¬ç«‹IPç‚¹å‡»");
+            //åˆ©ç”¨excelå¯¹è±¡
             DataToExcel dte=new DataToExcel();
             string filename="";
             try
             {			
                 if(ds.Tables[0].Rows.Count>0)
                 {
-                    filename=dte.DataExcel(ds.Tables[0],"±êÌâ",FilePath,nameList);
+                    filename=dte.DataExcel(ds.Tables[0],"æ ‡é¢˜",FilePath,nameList);
                 }
             }
             catch
@@ -276,11 +276,11 @@ namespace Smart.Core.Utils
         #endregion
 
         /// <summary>
-        /// ½«DataTableµÄÊı¾İµ¼³öÏÔÊ¾Îª±¨±í(²»Ê¹ÓÃExcel¶ÔÏó)
+        /// å°†DataTableçš„æ•°æ®å¯¼å‡ºæ˜¾ç¤ºä¸ºæŠ¥è¡¨(ä¸ä½¿ç”¨Excelå¯¹è±¡)
         /// </summary>
-        /// <param name="dt">Êı¾İDataTable</param>
-        /// <param name="strTitle">±êÌâ</param>
-        /// <param name="FilePath">Éú³ÉÎÄ¼şµÄÂ·¾¶</param>
+        /// <param name="dt">æ•°æ®DataTable</param>
+        /// <param name="strTitle">æ ‡é¢˜</param>
+        /// <param name="FilePath">ç”Ÿæˆæ–‡ä»¶çš„è·¯å¾„</param>
         /// <param name="nameList"></param>
         /// <returns></returns>
         //public string DataExcel(System.Data.DataTable dt, string strTitle, string FilePath, Hashtable nameList)
@@ -303,7 +303,7 @@ namespace Smart.Core.Utils
         //    excel.SetMargin(ref mt4, ref height);
 
         //    COM.Excel.cExcelFile.FontFormatting ff = COM.Excel.cExcelFile.FontFormatting.xlsNoFormat;
-        //    string font = "ËÎÌå";
+        //    string font = "å®‹ä½“";
         //    short fontsize = 9;
         //    excel.SetFont(ref font, ref fontsize, ref ff);
 
@@ -312,8 +312,8 @@ namespace Smart.Core.Utils
         //    short s3 = 12;
         //    excel.SetColumnWidth(ref b1, ref b2, ref s3);
 
-        //    string header = "Ò³Ã¼";
-        //    string footer = "Ò³½Å";
+        //    string header = "é¡µçœ‰";
+        //    string footer = "é¡µè„š";
         //    excel.SetHeader(ref header);
         //    excel.SetFooter(ref footer);
 
@@ -323,18 +323,18 @@ namespace Smart.Core.Utils
         //    COM.Excel.cExcelFile.CellAlignment ca = COM.Excel.cExcelFile.CellAlignment.xlsCentreAlign;
         //    COM.Excel.cExcelFile.CellHiddenLocked chl = COM.Excel.cExcelFile.CellHiddenLocked.xlsNormal;
 
-        //    // ±¨±í±êÌâ
+        //    // æŠ¥è¡¨æ ‡é¢˜
         //    int cellformat = 1;
         //    //			int rowindex = 1,colindex = 3;					
         //    //			object title = (object)strTitle;
         //    //			excel.WriteValue(ref vt, ref cf, ref ca, ref chl,ref rowindex,ref colindex,ref title,ref cellformat);
 
-        //    int rowIndex = 1;//ÆğÊ¼ĞĞ
+        //    int rowIndex = 1;//èµ·å§‹è¡Œ
         //    int colIndex = 0;
 
 
 
-        //    //È¡µÃÁĞ±êÌâ				
+        //    //å–å¾—åˆ—æ ‡é¢˜				
         //    foreach (DataColumn colhead in dt.Columns)
         //    {
         //        colIndex++;
@@ -351,7 +351,7 @@ namespace Smart.Core.Utils
         //        excel.WriteValue(ref vt, ref cf, ref ca, ref chl, ref rowIndex, ref colIndex, ref namestr, ref cellformat);
         //    }
 
-        //    //È¡µÃ±í¸ñÖĞµÄÊı¾İ			
+        //    //å–å¾—è¡¨æ ¼ä¸­çš„æ•°æ®			
         //    foreach (DataRow row in dt.Rows)
         //    {
         //        rowIndex++;
@@ -379,7 +379,7 @@ namespace Smart.Core.Utils
         //    //			}
         //    //			else
         //    //			{
-        //    //				//MessageBox.Show(this,"Çë´ò¿ªÎÄ¼şc:\\test.xls!");
+        //    //				//MessageBox.Show(this,"è¯·æ‰“å¼€æ–‡ä»¶c:\\test.xls!");
         //    //			}
         //    return filename;
 
@@ -387,7 +387,7 @@ namespace Smart.Core.Utils
 
         #endregion
 
-        #region  ÇåÀí¹ıÊ±µÄExcelÎÄ¼ş
+        #region  æ¸…ç†è¿‡æ—¶çš„Excelæ–‡ä»¶
 
         private void ClearFile(string FilePath)
         {

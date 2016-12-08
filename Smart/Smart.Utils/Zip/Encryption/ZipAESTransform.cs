@@ -1,4 +1,4 @@
-//
+﻿//
 // ZipAESTransform.cs
 //
 // Copyright 2009 David Pierson

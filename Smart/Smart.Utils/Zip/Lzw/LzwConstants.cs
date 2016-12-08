@@ -1,4 +1,4 @@
-// LzwConstants.cs
+﻿// LzwConstants.cs
 //
 // Copyright (C) 2009 Gabriel Burca
 //

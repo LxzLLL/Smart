@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Data;
 using Oracle.DataAccess.Client;
 //using System.Data.OracleClient;
@@ -8,24 +8,24 @@ using System.Data.Common;
 namespace Smart.Core.DataAccess.Oracle
 {
     /// <summary>
-    /// ·â×°Êı¾İ¿âµÄ»ù±¾²Ù×÷
+    /// å°è£…æ•°æ®åº“çš„åŸºæœ¬æ“ä½œ
     /// </summary>
     public class OracleOperator
     {
-        #region Ë½ÓĞ·½·¨ºÍ¹¤¾ß
+        #region ç§æœ‰æ–¹æ³•å’Œå·¥å…·
         /// <summary>
-        /// sql×¼±¸
+        /// sqlå‡†å¤‡
         /// </summary>
-        /// <param name="command">SqlÃüÁî</param>
-        /// <param name="connection">sqlÁ¬½Ó</param>
-        /// <param name="transaction">ÊÂÎñ</param>
-        /// <param name="commandType">ÀàĞÍ£¬ÎÄ±¾»¹ÊÇ´æ´¢¹ı³Ì</param>
-        /// <param name="commandText">sqlÓï¾ä</param>
-        /// <param name="commandParameters">²ÎÊı</param>
-        /// <param name="mustCloseConnection">ÊÇ·ñÒª¹Ø±Õ</param>
+        /// <param name="command">Sqlå‘½ä»¤</param>
+        /// <param name="connection">sqlè¿æ¥</param>
+        /// <param name="transaction">äº‹åŠ¡</param>
+        /// <param name="commandType">ç±»å‹ï¼Œæ–‡æœ¬è¿˜æ˜¯å­˜å‚¨è¿‡ç¨‹</param>
+        /// <param name="commandText">sqlè¯­å¥</param>
+        /// <param name="commandParameters">å‚æ•°</param>
+        /// <param name="mustCloseConnection">æ˜¯å¦è¦å…³é—­</param>
         private static void PrepareCommand(OracleCommand command, OracleConnection connection, OracleTransaction transaction, CommandType commandType, string commandText, OracleParameter[] commandParameters, out bool mustCloseConnection)
         {
-            // ´ò¿ªÁ¬½Ó
+            // æ‰“å¼€è¿æ¥
             if ( connection.State != ConnectionState.Open)
             {
                 mustCloseConnection = true;
@@ -37,13 +37,13 @@ namespace Smart.Core.DataAccess.Oracle
             }
             command.Connection = connection;
             command.CommandText = commandText;
-            // Èç¹û´æÔÚÊÂÎñ£¬Ôò°ó¶¨ÊÂÎñ
+            // å¦‚æœå­˜åœ¨äº‹åŠ¡ï¼Œåˆ™ç»‘å®šäº‹åŠ¡
             if ( transaction != null)
             {
                 command.Transaction = transaction;
             }
             command.CommandType = commandType;
-            // Èç¹û´æÔÚ²ÎÊı£¬Ôò°ó¶¨²ÎÊı
+            // å¦‚æœå­˜åœ¨å‚æ•°ï¼Œåˆ™ç»‘å®šå‚æ•°
             if ( commandParameters != null)
             {
                 AttachParameters(command, commandParameters);
@@ -52,10 +52,10 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// °ó¶¨²ÎÊı
+        /// ç»‘å®šå‚æ•°
         /// </summary>
-        /// <param name="command">sqlÃüÁî</param>
-        /// <param name="commandParameters">ÃüÁî²ÎÊı</param>
+        /// <param name="command">sqlå‘½ä»¤</param>
+        /// <param name="commandParameters">å‘½ä»¤å‚æ•°</param>
         private static void AttachParameters(OracleCommand command, OracleParameter[] commandParameters)
         {
             if (commandParameters != null)
@@ -78,13 +78,13 @@ namespace Smart.Core.DataAccess.Oracle
 
         #endregion
 
-        #region transaction ÊÂÎñ´¦Àí
+        #region transaction äº‹åŠ¡å¤„ç†
         /// <summary>
-        /// ¿ªÊ¼ÊÂÎñ
+        /// å¼€å§‹äº‹åŠ¡
         /// </summary>
-        /// <param name="conn">Êı¾İ¿âÁ¬½Ó</param>
-        /// <param name="Iso">Ö¸¶¨Á¬½ÓµÄÊÂÎñËø¶¨ĞĞÎª</param>
-        /// <returns>µ±Ç°ÊÂÎñ</returns>  
+        /// <param name="conn">æ•°æ®åº“è¿æ¥</param>
+        /// <param name="Iso">æŒ‡å®šè¿æ¥çš„äº‹åŠ¡é”å®šè¡Œä¸º</param>
+        /// <returns>å½“å‰äº‹åŠ¡</returns>  
         public static OracleTransaction BeginTransaction(OracleConnection conn, IsolationLevel Iso)
         {
             conn.Open();
@@ -92,10 +92,10 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// ¿ªÊ¼ÊÂÎñ
+        /// å¼€å§‹äº‹åŠ¡
         /// </summary>
-        /// <param name="conn">Êı¾İ¿âÁ¬½Ó</param>
-        /// <returns>µ±Ç°ÊÂÎñ</returns>
+        /// <param name="conn">æ•°æ®åº“è¿æ¥</param>
+        /// <returns>å½“å‰äº‹åŠ¡</returns>
         public static OracleTransaction BeginTransaction(OracleConnection conn)
         {
 
@@ -104,9 +104,9 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// ½áÊøÊÂÎñ£¬È·ÈÏ²Ù×÷
+        /// ç»“æŸäº‹åŠ¡ï¼Œç¡®è®¤æ“ä½œ
         /// </summary>
-        /// <param name="Transaction">Òª½áÊøµÄÊÂÎñ</param>
+        /// <param name="Transaction">è¦ç»“æŸçš„äº‹åŠ¡</param>
         public static void EndTransactionCommit( OracleTransaction Transaction )
         {
             OracleConnection con = Transaction.Connection;
@@ -115,9 +115,9 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// ½áÊøÊÂÎñ£¬»Ø¹ö²Ù×÷
+        /// ç»“æŸäº‹åŠ¡ï¼Œå›æ»šæ“ä½œ
         /// </summary>
-        /// <param name="Transaction">Òª½áÊøµÄÊÂÎñ</param>
+        /// <param name="Transaction">è¦ç»“æŸçš„äº‹åŠ¡</param>
         public static void EndTransactionRollback( OracleTransaction Transaction )
         {
             OracleConnection con =Transaction.Connection;
@@ -129,16 +129,16 @@ namespace Smart.Core.DataAccess.Oracle
 
         #region ExecuteNonQuery
         /// <summary>
-        ///  Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,²»·µ»Ø²ÎÊı,Ö»·µ»ØÓ°ÏìĞĞÊı(Í¨ÓÃ)
+        ///  æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,ä¸è¿”å›å‚æ•°,åªè¿”å›å½±å“è¡Œæ•°(é€šç”¨)
         /// </summary>
-        /// <param name="transaction">Óï¾äËùÔÚµÄÊÂÎñ</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ó°ÏìµÄĞĞÊı</returns>
+        /// <param name="transaction">è¯­å¥æ‰€åœ¨çš„äº‹åŠ¡</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>å½±å“çš„è¡Œæ•°</returns>
         public static int ExecuteNonQuery( OracleTransaction transaction, CommandType commandType, string commandText, params OracleParameter[] commandParameters)
         {
-            //Òª¼ì²é²ÎÊı  
+            //è¦æ£€æŸ¥å‚æ•°  
             OracleCommand cmd = new OracleCommand();
             bool mustCloseConnection = false;
             PrepareCommand(cmd, transaction.Connection, transaction, commandType, commandText, commandParameters, out mustCloseConnection);
@@ -148,12 +148,12 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        ///  Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,²»·µ»Ø²ÎÊı,Ö»·µ»ØÓ°ÏìĞĞÊı
+        ///  æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,ä¸è¿”å›å‚æ•°,åªè¿”å›å½±å“è¡Œæ•°
         /// </summary>
-        /// <param name="transaction">Óï¾äËùÔÚµÄÊÂÎñ</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <returns>Ó°ÏìµÄĞĞÊı</returns>
+        /// <param name="transaction">è¯­å¥æ‰€åœ¨çš„äº‹åŠ¡</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <returns>å½±å“çš„è¡Œæ•°</returns>
         public static int ExecuteNonQuery( OracleTransaction transaction, CommandType commandType, string commandText)
         {
             return ExecuteNonQuery(transaction, commandType, commandText, null);
@@ -161,17 +161,17 @@ namespace Smart.Core.DataAccess.Oracle
 
 
         /// <summary>
-        ///  Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,²»·µ»Ø²ÎÊı,Ö»·µ»ØÓ°ÏìĞĞÊı(Í¨ÓÃ)
+        ///  æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,ä¸è¿”å›å‚æ•°,åªè¿”å›å½±å“è¡Œæ•°(é€šç”¨)
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ó°ÏìµÄĞĞÊı</returns>
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>å½±å“çš„è¡Œæ•°</returns>
         public static int ExecuteNonQuery(OracleConnection connection, CommandType commandType, string commandText, params OracleParameter[] commandParameters)
         {
             int retval = 0;
-            //Òª¼ì²é²ÎÊı
+            //è¦æ£€æŸ¥å‚æ•°
             OracleCommand cmd = new OracleCommand();
             bool mustCloseConnection = false;
             PrepareCommand(cmd, connection, null, commandType, commandText, commandParameters, out mustCloseConnection);
@@ -182,12 +182,12 @@ namespace Smart.Core.DataAccess.Oracle
             return retval;
         }
         /// <summary>
-        ///  Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,²»·µ»Ø²ÎÊı,Ö»·µ»ØÓ°ÏìĞĞÊı
+        ///  æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,ä¸è¿”å›å‚æ•°,åªè¿”å›å½±å“è¡Œæ•°
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <returns>Ó°ÏìµÄĞĞÊı</returns>
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <returns>å½±å“çš„è¡Œæ•°</returns>
         public static int ExecuteNonQuery(OracleConnection connection, CommandType commandType, string commandText)
         {
             // Pass through the call providing null for the set of SqlParameters
@@ -200,14 +200,14 @@ namespace Smart.Core.DataAccess.Oracle
 
 
         /// <summary>
-        /// Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıdataset(Í¨ÓÃ)
+        /// æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°dataset(é€šç”¨)
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="Table"> Ìî³äµÄ±íÃû </param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ö´ĞĞ½á¹û¼¯</returns>
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="Table"> å¡«å……çš„è¡¨å </param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>æ‰§è¡Œç»“æœé›†</returns>
         public static DataSet ExecuteDataset(OracleConnection connection, CommandType commandType, string commandText, params OracleParameter[] commandParameters)
         {
 
@@ -227,13 +227,13 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıdataset
+        /// æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°dataset
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="Table">Ìî³äµÄ±íÃû</param>
-        /// <returns>Ö´ĞĞ½á¹û¼¯</returns>¡¡
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="Table">å¡«å……çš„è¡¨å</param>
+        /// <returns>æ‰§è¡Œç»“æœé›†</returns>ã€€
         public static DataSet ExecuteDataset(OracleConnection connection, CommandType commandType, string commandText)
         {
 
@@ -242,7 +242,7 @@ namespace Smart.Core.DataAccess.Oracle
         #endregion
 
         #region ExecuteReader
-        //Í¨ÓÃ
+        //é€šç”¨
         private static OracleDataReader ExecuteReader(OracleConnection connection, OracleTransaction transaction, CommandType commandType, string commandText, OracleParameter[] commandParameters, bool isClose)
         {
             bool mustCloseConnection = false;
@@ -271,16 +271,16 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıdatareader(Í¨ÓÃ)
+        /// æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°datareader(é€šç”¨)
         /// <remarks >
-        /// ĞèÒªÏÔÊ¾¹Ø±ÕÁ¬½Ó
+        /// éœ€è¦æ˜¾ç¤ºå…³é—­è¿æ¥
         /// </remarks>
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ö´ĞĞ½á¹û¼¯</returns>
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>æ‰§è¡Œç»“æœé›†</returns>
         public static OracleDataReader ExecuteReader(OracleConnection connection, CommandType commandType, string commandText, params OracleParameter[] commandParameters)
         {
             return ExecuteReader(connection, (OracleTransaction)null, commandType, commandText, commandParameters, true);
@@ -288,15 +288,15 @@ namespace Smart.Core.DataAccess.Oracle
 
 
         /// <summary>
-        /// Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıdatareader
+        /// æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°datareader
         /// <remarks >
-        /// ĞèÒªÏÔÊ¾¹Ø±ÕÁ¬½Ó
+        /// éœ€è¦æ˜¾ç¤ºå…³é—­è¿æ¥
         /// </remarks>
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>n
-        /// <returns>Ö´ĞĞ½á¹û¼¯</returns>
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>n
+        /// <returns>æ‰§è¡Œç»“æœé›†</returns>
         public static OracleDataReader ExecuteReader(OracleConnection connection, CommandType commandType, string commandText)
         {
             return ExecuteReader(connection, commandType, commandText,null);
@@ -305,13 +305,13 @@ namespace Smart.Core.DataAccess.Oracle
 
         #region ExecuteScalar
         /// <summary>
-        /// Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıobject£®µÚÒ»ĞĞ£¬µÚÒ»ÁĞµÄÖµ(Í¨ÓÃ)
+        /// æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°objectï¼ç¬¬ä¸€è¡Œï¼Œç¬¬ä¸€åˆ—çš„å€¼(é€šç”¨)
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ö´ĞĞ½á¹û¼¯µÚÒ»ĞĞ£¬µÚÒ»ÁĞµÄÖµ</returns>¡¡
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>æ‰§è¡Œç»“æœé›†ç¬¬ä¸€è¡Œï¼Œç¬¬ä¸€åˆ—çš„å€¼</returns>ã€€
         public static object ExecuteScalar(OracleConnection connection, CommandType commandType, string commandText, params OracleParameter[] commandParameters)
         {
             object retval = null;
@@ -326,25 +326,25 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        /// Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıobject£®µÚÒ»ĞĞ£¬µÚÒ»ÁĞµÄÖµ
+        /// æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°objectï¼ç¬¬ä¸€è¡Œï¼Œç¬¬ä¸€åˆ—çš„å€¼
         /// </summary>
-        /// <param name="connection">ÒªÖ´ĞĞSQLÓï¾äµÄÁ¬½Ó</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <returns>Ö´ĞĞ½á¹û¼¯µÚÒ»ĞĞ£¬µÚÒ»ÁĞµÄÖµ</returns>¡¡
+        /// <param name="connection">è¦æ‰§è¡ŒSQLè¯­å¥çš„è¿æ¥</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <returns>æ‰§è¡Œç»“æœé›†ç¬¬ä¸€è¡Œï¼Œç¬¬ä¸€åˆ—çš„å€¼</returns>ã€€
         public static object ExecuteScalar(OracleConnection connection, CommandType commandType, string commandText)
         {
             return ExecuteScalar(connection, commandType, commandText,null);
         }
 
         /// <summary>
-        ///  Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıobject£®µÚÒ»ĞĞ£¬µÚÒ»ÁĞµÄÖµ
+        ///  æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°objectï¼ç¬¬ä¸€è¡Œï¼Œç¬¬ä¸€åˆ—çš„å€¼
         /// </summary>
-        /// <param name="transaction">Óï¾äËùÔÚµÄÊÂÎñ</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ó°ÏìµÄĞĞÊı</returns>
+        /// <param name="transaction">è¯­å¥æ‰€åœ¨çš„äº‹åŠ¡</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>å½±å“çš„è¡Œæ•°</returns>
         public static object ExecuteScalar(DbTransaction transaction, CommandType commandType, string commandText)
         {
             object retval = null;
@@ -357,13 +357,13 @@ namespace Smart.Core.DataAccess.Oracle
         }
 
         /// <summary>
-        ///  Ö´ĞĞSQLÓï¾ä»òÕß´æ´¢¹ı³Ì ,·µ»Ø²ÎÊıobject£®µÚÒ»ĞĞ£¬µÚÒ»ÁĞµÄÖµ
+        ///  æ‰§è¡ŒSQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹ ,è¿”å›å‚æ•°objectï¼ç¬¬ä¸€è¡Œï¼Œç¬¬ä¸€åˆ—çš„å€¼
         /// </summary>
-        /// <param name="transaction">Óï¾äËùÔÚµÄÊÂÎñ</param>
-        /// <param name="commandType">SQLÓï¾äÀàĞÍ</param>
-        /// <param name="commandText">SQLÓï¾ä»òÕß´æ´¢¹ı³ÌÃû</param>
-        /// <param name="commandParameters">SQLÓï¾ä»òÕß´æ´¢¹ı³Ì²ÎÊı</param>
-        /// <returns>Ó°ÏìµÄĞĞÊı</returns>
+        /// <param name="transaction">è¯­å¥æ‰€åœ¨çš„äº‹åŠ¡</param>
+        /// <param name="commandType">SQLè¯­å¥ç±»å‹</param>
+        /// <param name="commandText">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å</param>
+        /// <param name="commandParameters">SQLè¯­å¥æˆ–è€…å­˜å‚¨è¿‡ç¨‹å‚æ•°</param>
+        /// <returns>å½±å“çš„è¡Œæ•°</returns>
         public static object ExecuteScalar(DbTransaction transaction, CommandType commandType, string commandText, params OracleParameter[] commandParameters)
         {
             object retval = null;

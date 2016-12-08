@@ -1,4 +1,4 @@
-// TarEntry.cs
+﻿// TarEntry.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

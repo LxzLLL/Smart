@@ -1,4 +1,4 @@
-// TarHeader.cs
+﻿// TarHeader.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

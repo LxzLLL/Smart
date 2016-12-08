@@ -1,4 +1,4 @@
-// WindowsPathUtils.cs
+﻿// WindowsPathUtils.cs
 //
 // Copyright 2007 John Reilly
 //

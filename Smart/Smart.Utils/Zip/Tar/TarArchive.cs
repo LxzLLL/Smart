@@ -1,4 +1,4 @@
-// TarArchive.cs
+﻿// TarArchive.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

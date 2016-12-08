@@ -1,4 +1,4 @@
-// InvalidHeaderException.cs
+﻿// InvalidHeaderException.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

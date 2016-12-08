@@ -1,4 +1,4 @@
-// BZip2InputStream.cs
+﻿// BZip2InputStream.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

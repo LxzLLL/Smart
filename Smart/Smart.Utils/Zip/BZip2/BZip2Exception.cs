@@ -1,4 +1,4 @@
-// BZip2.cs
+﻿// BZip2.cs
 //
 // Copyright 2004 John Reilly
 //

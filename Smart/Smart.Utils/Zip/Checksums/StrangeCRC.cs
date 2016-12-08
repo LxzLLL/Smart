@@ -1,4 +1,4 @@
-// StrangeCRC.cs - computes a crc used in the bziplib
+﻿// StrangeCRC.cs - computes a crc used in the bziplib
 //
 // Copyright (C) 2001 Mike Krueger
 //

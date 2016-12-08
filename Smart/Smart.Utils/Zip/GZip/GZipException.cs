@@ -1,4 +1,4 @@
-// GZipException.cs
+﻿// GZipException.cs
 //
 // Copyright 2004 John Reilly
 //

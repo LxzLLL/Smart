@@ -1,4 +1,4 @@
-// TarInputStream.cs
+﻿// TarInputStream.cs
 //
 // Copyright (C) 2001 Mike Krueger
 //

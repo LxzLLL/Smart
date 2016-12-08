@@ -1,4 +1,4 @@
-// WindowsNameTransform.cs
+﻿// WindowsNameTransform.cs
 //
 // Copyright 2007 John Reilly
 //

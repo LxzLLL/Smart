@@ -1,4 +1,4 @@
-// BZip2Constants.cs
+﻿// BZip2Constants.cs
 // Copyright (C) 2001 Mike Krueger
 //
 // This program is free software; you can redistribute it and/or
