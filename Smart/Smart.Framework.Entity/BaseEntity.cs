@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Smart.Framework.Entity
 {
-    public class Class1
+    /// <summary>
+    /// 暂无特别处理，仅做为标识
+    /// </summary>
+    public class BaseEntity
     {
+
     }
 }
